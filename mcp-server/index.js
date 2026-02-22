@@ -1,0 +1,367 @@
+#!/usr/bin/env node
+/**
+ * RGAA MCP Server
+ *
+ * Model Context Protocol server that exposes RGAA accessibility criteria,
+ * glossary, and reference data as searchable tools and resources.
+ *
+ * Usage:
+ *   node mcp-server/index.js
+ *
+ * MCP Configuration (claude_desktop_config.json):
+ *   {
+ *     "mcpServers": {
+ *       "rgaa": {
+ *         "command": "node",
+ *         "args": ["/path/to/Rgaa_Website/mcp-server/index.js"]
+ *       }
+ *     }
+ *   }
+ */
+
+const { Server } = require('@modelcontextprotocol/sdk/server/index.js');
+const { StdioServerTransport } = require('@modelcontextprotocol/sdk/server/stdio.js');
+const {
+	CallToolRequestSchema,
+	ListToolsRequestSchema,
+	ListResourcesRequestSchema,
+	ReadResourceRequestSchema,
+} = require('@modelcontextprotocol/sdk/types.js');
+const fs = require('fs');
+const path = require('path');
+
+const DATA_DIR = path.resolve(__dirname, '..', 'data');
+
+// Load RGAA data
+function loadData() {
+	const dataFile = path.join(DATA_DIR, 'rgaa-all.json');
+	if (!fs.existsSync(dataFile)) {
+		console.error('Data file not found. Run: node scripts/extract-rgaa-data.js');
+		process.exit(1);
+	}
+	return JSON.parse(fs.readFileSync(dataFile, 'utf-8'));
+}
+
+const data = loadData();
+
+// Create MCP server
+const server = new Server(
+	{
+		name: 'rgaa-server',
+		version: '1.0.0',
+	},
+	{
+		capabilities: {
+			tools: {},
+			resources: {},
+		},
+	}
+);
+
+/**
+ * Tool: search_criteria
+ */
+function searchCriteria(query, version = 'rgaa41', level = null) {
+	const versionData = data.versions[version];
+	if (!versionData) return { error: `Unknown version: ${version}. Available: ${Object.keys(data.versions).join(', ')}` };
+
+	const q = query.toLowerCase();
+	let results = versionData.criteria.filter(c => {
+		const text = `${c.title} ${c.number} ${c.theme}`.toLowerCase();
+		return text.includes(q);
+	});
+
+	if (level) {
+		results = results.filter(c => c.level === level.toUpperCase());
+	}
+
+	return {
+		version: versionData.label,
+		query,
+		resultCount: results.length,
+		criteria: results.map(c => ({
+			number: c.number,
+			level: c.level,
+			title: c.title,
+			theme: c.theme,
+			testCount: c.tests.length,
+		})),
+	};
+}
+
+/**
+ * Tool: get_criterion
+ */
+function getCriterion(number, version = 'rgaa41') {
+	const versionData = data.versions[version];
+	if (!versionData) return { error: `Unknown version: ${version}` };
+
+	const criterion = versionData.criteria.find(c => c.number === number);
+	if (!criterion) return { error: `Criterion ${number} not found in ${version}` };
+
+	return {
+		version: versionData.label,
+		...criterion,
+	};
+}
+
+/**
+ * Tool: list_themes
+ */
+function listThemes(version = 'rgaa41') {
+	const versionData = data.versions[version];
+	if (!versionData) return { error: `Unknown version: ${version}` };
+
+	const themes = {};
+	for (const c of versionData.criteria) {
+		if (!themes[c.themeId]) {
+			themes[c.themeId] = { id: c.themeId, name: c.theme, criteriaCount: 0, levels: { A: 0, AA: 0, AAA: 0 } };
+		}
+		themes[c.themeId].criteriaCount++;
+		if (themes[c.themeId].levels[c.level] !== undefined) {
+			themes[c.themeId].levels[c.level]++;
+		}
+	}
+
+	return {
+		version: versionData.label,
+		themes: Object.values(themes),
+		stats: versionData.stats,
+	};
+}
+
+/**
+ * Tool: search_glossary
+ */
+function searchGlossary(query, version = 'rgaa41') {
+	const versionData = data.versions[version];
+	if (!versionData) return { error: `Unknown version: ${version}` };
+
+	const q = query.toLowerCase();
+	const results = versionData.glossary.filter(t => {
+		return t.term.toLowerCase().includes(q) || t.definition.toLowerCase().includes(q);
+	});
+
+	return {
+		version: versionData.label,
+		query,
+		resultCount: results.length,
+		terms: results,
+	};
+}
+
+/**
+ * Tool: get_criteria_by_theme
+ */
+function getCriteriaByTheme(themeId, version = 'rgaa41') {
+	const versionData = data.versions[version];
+	if (!versionData) return { error: `Unknown version: ${version}` };
+
+	const criteria = versionData.criteria.filter(c => c.themeId === themeId);
+	if (criteria.length === 0) {
+		return { error: `No criteria found for theme "${themeId}" in ${version}. Available themes: ${versionData.themes.join(', ')}` };
+	}
+
+	return {
+		version: versionData.label,
+		theme: criteria[0].theme,
+		themeId,
+		criteriaCount: criteria.length,
+		criteria: criteria.map(c => ({
+			number: c.number,
+			level: c.level,
+			title: c.title,
+			testCount: c.tests.length,
+		})),
+	};
+}
+
+/**
+ * Tool: get_stats
+ */
+function getStats(version = null) {
+	if (version) {
+		const versionData = data.versions[version];
+		if (!versionData) return { error: `Unknown version: ${version}` };
+		return { version: versionData.label, stats: versionData.stats };
+	}
+
+	const allStats = {};
+	for (const [v, d] of Object.entries(data.versions)) {
+		allStats[v] = { label: d.label, stats: d.stats };
+	}
+	return { versions: allStats };
+}
+
+// Register tools
+server.setRequestHandler(ListToolsRequestSchema, async () => ({
+	tools: [
+		{
+			name: 'search_criteria',
+			description: 'Search RGAA accessibility criteria by keyword. Returns matching criteria with their level, theme, and test count.',
+			inputSchema: {
+				type: 'object',
+				properties: {
+					query: { type: 'string', description: 'Search query (matches against criterion title, number, theme)' },
+					version: { type: 'string', description: 'RGAA version: rgaa41 (default), rgaa4, rgaa3', default: 'rgaa41' },
+					level: { type: 'string', description: 'Filter by WCAG level: A, AA, AAA', enum: ['A', 'AA', 'AAA'] },
+				},
+				required: ['query'],
+			},
+		},
+		{
+			name: 'get_criterion',
+			description: 'Get full details of a specific RGAA criterion by its number (e.g., "1.1", "4.3"). Includes all tests.',
+			inputSchema: {
+				type: 'object',
+				properties: {
+					number: { type: 'string', description: 'Criterion number (e.g., "1.1", "4.3", "11.2")' },
+					version: { type: 'string', description: 'RGAA version: rgaa41 (default), rgaa4, rgaa3', default: 'rgaa41' },
+				},
+				required: ['number'],
+			},
+		},
+		{
+			name: 'list_themes',
+			description: 'List all RGAA themes (Images, Frames, Colors, etc.) with criteria counts per level.',
+			inputSchema: {
+				type: 'object',
+				properties: {
+					version: { type: 'string', description: 'RGAA version: rgaa41 (default), rgaa4, rgaa3', default: 'rgaa41' },
+				},
+			},
+		},
+		{
+			name: 'get_criteria_by_theme',
+			description: 'Get all criteria for a given theme (e.g., "images", "formulaires", "liens").',
+			inputSchema: {
+				type: 'object',
+				properties: {
+					themeId: { type: 'string', description: 'Theme ID (e.g., "images", "cadres", "couleurs", "multimedia", "tableaux", "liens", "scripts", "elements", "structure", "presentation", "formulaires", "navigation", "consultation")' },
+					version: { type: 'string', description: 'RGAA version: rgaa41 (default), rgaa4, rgaa3', default: 'rgaa41' },
+				},
+				required: ['themeId'],
+			},
+		},
+		{
+			name: 'search_glossary',
+			description: 'Search the RGAA glossary for accessibility terms and definitions.',
+			inputSchema: {
+				type: 'object',
+				properties: {
+					query: { type: 'string', description: 'Search query (matches term name and definition)' },
+					version: { type: 'string', description: 'RGAA version: rgaa41 (default), rgaa4, rgaa3', default: 'rgaa41' },
+				},
+				required: ['query'],
+			},
+		},
+		{
+			name: 'get_stats',
+			description: 'Get statistics about RGAA criteria (total count, by level, by theme).',
+			inputSchema: {
+				type: 'object',
+				properties: {
+					version: { type: 'string', description: 'RGAA version (omit for all versions)' },
+				},
+			},
+		},
+	],
+}));
+
+// Handle tool calls
+server.setRequestHandler(CallToolRequestSchema, async (request) => {
+	const { name, arguments: args } = request.params;
+
+	let result;
+	switch (name) {
+		case 'search_criteria':
+			result = searchCriteria(args.query, args.version, args.level);
+			break;
+		case 'get_criterion':
+			result = getCriterion(args.number, args.version);
+			break;
+		case 'list_themes':
+			result = listThemes(args.version);
+			break;
+		case 'get_criteria_by_theme':
+			result = getCriteriaByTheme(args.themeId, args.version);
+			break;
+		case 'search_glossary':
+			result = searchGlossary(args.query, args.version);
+			break;
+		case 'get_stats':
+			result = getStats(args.version);
+			break;
+		default:
+			result = { error: `Unknown tool: ${name}` };
+	}
+
+	return {
+		content: [{ type: 'text', text: JSON.stringify(result, null, 2) }],
+	};
+});
+
+// Register resources
+server.setRequestHandler(ListResourcesRequestSchema, async () => ({
+	resources: [
+		{
+			uri: 'rgaa://versions',
+			name: 'RGAA Versions',
+			description: 'List of available RGAA versions with statistics',
+			mimeType: 'application/json',
+		},
+		...Object.entries(data.versions).map(([id, v]) => ({
+			uri: `rgaa://${id}/criteria`,
+			name: `${v.label} Criteria`,
+			description: `All ${v.stats.totalCriteria} criteria for ${v.label}`,
+			mimeType: 'application/json',
+		})),
+		...Object.entries(data.versions).map(([id, v]) => ({
+			uri: `rgaa://${id}/glossary`,
+			name: `${v.label} Glossary`,
+			description: `All ${v.stats.totalGlossaryTerms} glossary terms for ${v.label}`,
+			mimeType: 'application/json',
+		})),
+	],
+}));
+
+// Handle resource reads
+server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
+	const { uri } = request.params;
+
+	if (uri === 'rgaa://versions') {
+		return {
+			contents: [{
+				uri,
+				mimeType: 'application/json',
+				text: JSON.stringify(getStats(), null, 2),
+			}],
+		};
+	}
+
+	const match = uri.match(/^rgaa:\/\/(\w+)\/(criteria|glossary)$/);
+	if (match) {
+		const [, version, type] = match;
+		const versionData = data.versions[version];
+		if (versionData) {
+			return {
+				contents: [{
+					uri,
+					mimeType: 'application/json',
+					text: JSON.stringify(versionData[type], null, 2),
+				}],
+			};
+		}
+	}
+
+	throw new Error(`Resource not found: ${uri}`);
+});
+
+// Start the server
+async function main() {
+	const transport = new StdioServerTransport();
+	await server.connect(transport);
+	console.error('RGAA MCP Server running on stdio');
+}
+
+main().catch(console.error);

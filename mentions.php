@@ -1,0 +1,87 @@
+<?php
+require_once __DIR__ . '/includes' . '/config.php';
+
+$lang = 'fr';
+$pageTitle = 'Mentions légales - RGAA par Tanaguru';
+$pageDescription = 'Mentions légales du site RGAA proposé par Tanaguru';
+$canonicalUrl = '/mentions.html';
+$alternateUrls = array (
+  'fr' => '/mentions.html',
+  'en' => '/en/legal-notice.html',
+);
+$googleVerification = 'pzLp1bE8KeV2q7OeoMR_xpdXJ-mjfKyh00jw3ai75w0';
+$bodyClass = 'mentions toc-follow';
+
+include __DIR__ . '/includes' . '/head.php';
+include __DIR__ . '/includes' . '/header.php';
+?>
+<main id="main" role="main">
+			<div class="headrub page">
+				<h1>Mentions légales</h1>
+                <div id="navtoc">
+                    <h2 id="toc">Sommaire</h2>
+                    <nav class="nav" role="navigation" aria-labelledby="toc">
+                        <ul>
+							<li><a href="#licence">Licence du RGAA</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#responsables">Responsables légaux</a></li>
+                            <li><a href="#credits">Crédits</a></li>
+                            <li><a href="#analytics">Mesure d’audience du site Web</a></li>
+                        </ul>
+                    </nav>
+                </div>
+			</div>
+			<div class="page">
+				<h2 id="licence">Licence du RGAA</h2>
+				<p>Le RGAA (Référentiel Général d’Amélioration de l’Accessibilité) est un document d’État placé sous licence ouverte dont voici les détails ci-après.</p>
+
+				<h3>Licence du RGAA 3 2017</h3>
+				<p><a href="https://references.modernisation.gouv.fr/rgaa-accessibilite/" rel="external" class="external">RGAA 3 officiel</a>, basé sur la <a href="http://www.w3.org/Translations/WCAG20-fr/" rel="external" class="external">norme internationale <abbr title="Web Content Accessibility Guidelines" lang="en">WCAG</abbr> 2.0</a></p>
+				<p>Ce document est un document de l’État placé sous <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence" rel="external" class="external">licence ouverte 1.0 ou ultérieure</a>, comme tous les documents hébergés sur <a href="http://references.modernisation.gouv.fr/" rel="external" class="external">references.modernisation.gouv.fr</a>. Voir les conditions d’utilisation de la licence dans les <a href="http://references.modernisation.gouv.fr/mentions-legales" rel="external" class="external">mentions légales</a>.</p>
+				<p>Le référentiel technique (liste des critères, glossaire, cas particuliers, notes techniques, base de référence) est une copie adaptée du <a href="http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html" rel="external" class="external">référentiel AccessiWeb HTML5/ARIA</a> - Version de travail du 19/12/2013 - Édité par l’association BrailleNet.</p>
+
+				<h3>Licence du RGAA 4</h3>
+				<p><a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/" rel="external" class="external">RGAA 4 officiel</a>, basé sur la <a href="https://www.w3.org/TR/WCAG21/" rel="external" class="external" hreflang="en">norme internationale <abbr title="Web Content Accessibility Guidelines" lang="en">WCAG</abbr> 2.1</a></p>
+				<p>Ce document est placé sous <a href="https://www.etalab.gouv.fr/licence-ouverte-open-licence" rel="external" class="external">licence ouverte 2.0 ou ultérieure</a>.</p>
+				<p>La partie 2 du RGAA 4.0 ou méthode technique de vérification de la conformité à la norme de référence est adaptée du référentiel technique RGAA 3 mise à jour 2017 (liste des critères, glossaire, cas particuliers, notes techniques, environnement de tests « base de référence ») qui est lui-même une copie adaptée du <a href="http://www.accessiweb.org/index.php/accessiweb-html5aria-liste-deployee.html" rel="external" class="external">référentiel AccessiWeb HTML5/ARIA</a> - Version de travail du 19/12/2013 - Édité par l'association BrailleNet.</p>
+
+				<h3>À propos de ce site RGAA par Tanaguru</h3>
+				<p>Ce site est une initiative de l’équipe Tanaguru. Il&nbsp;s’agit d’une reproduction fidèle au document original (hors travail indiqué « en cours »)&nbsp;: seules quelques corrections mineures d’orthographe et de présentation y&nbsp;ont été apportées.</p>
+				<p><em>Avertissement&nbsp;: cette version n’a pas de valeur normative. Le seul document normatif est le RGAA officiel en&nbsp;français, conforme à la norme internationale <abbr title="Web Content Accessibility Guidelines" lang="en">WCAG</abbr>.</em></p>
+
+				<h2 id="contact">Contact</h2>
+				<p>Si vous détectez des erreurs, si vous avez des suggestions ou si vous souhaitez contribuer, rendez-vous sur <a href="https://github.com/Tanaguru/Rgaa_Website/issues" rel="external" class="external">notre dépôt Github</a>.</p>
+
+				<h2 id="responsables">Responsables légaux</h2>
+				<h3>Édition du site</h3>
+				<p>Site édité par la société <a href="http://www.oceaneconsulting.com" rel="external" class="external">Océane Consulting WE</a>, SAS (Société par actions simplifiée) au capital social de 20 000 €</p>
+				<p>Siège social :<br />
+				8 rue de Choiseul<br />
+				75002 Paris</p>
+				<p>Directeur de la publication : Frédéric Halna</p>
+
+				<h3>Hébergement du site</h3>
+				<p><a href="https://www.ovh.com" rel="external" class="external">OVH</a></p>
+				<p>Siège social :<br />
+				2 rue Kellermann<br />
+				59100 Roubaix</p>
+
+				<h2 id="credits">Crédits</h2>
+				<p>Cette page est réalisée avec <a href="http://tinytypo.tetue.net" rel="external" class="external">Tiny Typo</a>, par <a href="https://www.tanaguru.com/fr/" rel="external" class="external">Tanaguru</a>, un gentil dragon qui évalue votre accessibilité&nbsp;web.</p>
+
+				<h2 id="analytics">Mesure d’audience du site Web</h2>
+				<p>Nous utilisons le service <a href="https://matomo.org/">Matomo</a> afin de mesurer l’audience de ce site Web.</p>
+				<p>Les statistiques sont recueillies en respectant les règles énoncées par la CNIL :</p>
+				<ul>
+					<li>anonymisation des adresses IP (seuls les deux premiers octets des adresses IP sont conservés) ;</li>
+					<li>mise en place de la solution de désinscription (ci‐après) ;</li>
+					<li>application d’une durée de vie maximale de 13 mois pour les cookies de suivi ;</li>
+					<li>prise en charge de la préférence « Ne Pas Suivre » (<i lang="en">Do Not Track</i>, en anglais). Vous ne serez donc pas suivi si votre navigateur transmet que vous ne voulez pas l’être. Ceci est un paramètre de votre navigateur et vous ne serez pas en mesure de participer avant d’avoir désactivé la fonctionnalité « ne pas suivre ».</li>
+				</ul>
+				<p>Ces informations ne seront jamais transmises à un tiers.</p>
+				<p>Vous pouvez vous en désabonner en utilisant le cadre ci-dessous (décocher la case pour ne plus être suivi si elle est disponible).</p>
+
+				<iframe title="Désinscription du suivi pour la mesure d’audience" class="iframe-matomo" src="https://matomo.tanaguru.com/index.php?module=CoreAdminHome&action=optOut&language=fr&backgroundColor=&fontColor=&fontSize=&fontFamily=Arial%2C%20sans-serif"></iframe>
+			</div>
+        </main>
+<?php include __DIR__ . '/includes' . '/footer.php'; ?>

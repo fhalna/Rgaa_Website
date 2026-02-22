@@ -1,103 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- RGAA 4.1 (French) -->
   <url>
-    <loc>http://rgaa.tanaguru.com/</loc>
+    <loc>https://rgaa.tanaguru.com/</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://rgaa.tanaguru.com/mentions.html</loc>
+    <loc>https://rgaa.tanaguru.com/rgaa4-1-glossaire.php</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rgaa.tanaguru.com/rgaa4-1-base.php</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://rgaa.tanaguru.com/rgaa4-1-references.php</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- RGAA 4.0 (French) -->
+  <url>
+    <loc>https://rgaa.tanaguru.com/rgaa4-criteres.php</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rgaa.tanaguru.com/rgaa4-glossaire.php</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rgaa.tanaguru.com/rgaa4-base.php</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://rgaa.tanaguru.com/rgaa4-references.php</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- RGAA 3.2017 (French) -->
+  <url>
+    <loc>https://rgaa.tanaguru.com/rgaa3-criteres.php</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rgaa.tanaguru.com/rgaa3-glossaire.php</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rgaa.tanaguru.com/rgaa3-cas-particuliers.php</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://rgaa.tanaguru.com/rgaa3-notes-techniques.php</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://rgaa.tanaguru.com/rgaa3-base.php</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://rgaa.tanaguru.com/rgaa3-references.php</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Other French pages -->
+  <url>
+    <loc>https://rgaa.tanaguru.com/index-ancien.php</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://rgaa.tanaguru.com/mentions.php</loc>
+    <priority>0.1</priority>
+  </url>
+
+  <!-- English pages -->
+  <url>
+    <loc>https://rgaa.tanaguru.com/en/</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rgaa.tanaguru.com/en/legal-notice.php</loc>
     <priority>0.1</priority>
   </url>
   <url>
-    <loc>http://rgaa.tanaguru.com/rgaa3-base.html</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/rgaa3-cas-particuliers.html</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/rgaa3-criteres.html</loc>
+    <loc>https://rgaa.tanaguru.com/en/rgaa3-criteria.php</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://rgaa.tanaguru.com/rgaa3-glossaire.html</loc>
+    <loc>https://rgaa.tanaguru.com/en/rgaa3-glossary.php</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://rgaa.tanaguru.com/rgaa3-notes-techniques.html</loc>
+    <loc>https://rgaa.tanaguru.com/en/rgaa3-particular-cases.php</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://rgaa.tanaguru.com/rgaa3-references.html</loc>
+    <loc>https://rgaa.tanaguru.com/en/rgaa3-technical-notes.php</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://rgaa.tanaguru.com/rgaa4-base.html</loc>
+    <loc>https://rgaa.tanaguru.com/en/rgaa3-baseline.php</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://rgaa.tanaguru.com/rgaa4-base.html</loc>
+    <loc>https://rgaa.tanaguru.com/en/rgaa3-references.php</loc>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>http://rgaa.tanaguru.com/rgaa4-glossaire.html</loc>
+    <loc>https://rgaa.tanaguru.com/en/rgaa4-criteria.php</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://rgaa.tanaguru.com/rgaa4-references.html</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/rgaa4-1-base.html</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/rgaa4-1-criteres.html</loc>
+    <loc>https://rgaa.tanaguru.com/en/rgaa4-glossary.php</loc>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/rgaa4-1-glossaire.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/rgaa4-1-references.html</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/index-ancien.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/en/</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/en/legal-notice.html</loc>
-    <priority>0.1</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/en/rgaa3-baseline.html</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/en/rgaa3-criteria.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/en/rgaa3-glossary.html</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/en/rgaa3-particular-cases.html</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/en/rgaa3-references.html</loc>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>http://rgaa.tanaguru.com/en/rgaa3-technical-notes.html</loc>
-    <priority>0.5</priority>
   </url>
 </urlset>
