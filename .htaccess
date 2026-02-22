@@ -16,6 +16,12 @@ DefaultLanguage fr-FR
 	Header set X-Robots-Tag "noindex"
 </Files>
 
+# MCP server reverse proxy (Streamable HTTP on port 3001)
+<IfModule mod_proxy.c>
+	ProxyPass /mcp http://localhost:3001/mcp
+	ProxyPassReverse /mcp http://localhost:3001/mcp
+</IfModule>
+
 # Block access to internal directories
 <IfModule mod_rewrite.c>
 	RewriteEngine On

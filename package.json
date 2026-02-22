@@ -13,6 +13,7 @@
     "test:html": "node tests/validate-html.js",
     "test:links": "node tests/check-links.js",
     "translate": "node scripts/translate.js",
+    "mcp:start": "node mcp-server/index.js --http",
     "extract-data": "node scripts/extract-rgaa-data.js",
     "scrape-methodologies": "node scripts/scrape-methodologies.js"
   },

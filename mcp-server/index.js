@@ -362,8 +362,10 @@ function getStats(version = null) {
 	return { versions: allStats };
 }
 
-// Register tools
-server.setRequestHandler(ListToolsRequestSchema, async () => ({
+// Register all MCP handlers on a server instance
+function registerHandlers(srv) {
+
+srv.setRequestHandler(ListToolsRequestSchema, async () => ({
 	tools: [
 		{
 			name: 'search_criteria',
@@ -451,7 +453,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 }));
 
 // Handle tool calls
-server.setRequestHandler(CallToolRequestSchema, async (request) => {
+srv.setRequestHandler(CallToolRequestSchema, async (request) => {
 	const { name, arguments: args } = request.params;
 
 	let result;
@@ -487,7 +489,7 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 });
 
 // Register resources
-server.setRequestHandler(ListResourcesRequestSchema, async () => ({
+srv.setRequestHandler(ListResourcesRequestSchema, async () => ({
 	resources: [
 		{
 			uri: 'rgaa://versions',
@@ -511,7 +513,7 @@ server.setRequestHandler(ListResourcesRequestSchema, async () => ({
 }));
 
 // Handle resource reads
-server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
+srv.setRequestHandler(ReadResourceRequestSchema, async (request) => {
 	const { uri } = request.params;
 
 	if (uri === 'rgaa://versions') {
@@ -542,11 +544,122 @@ server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
 	throw new Error(`Resource not found: ${uri}`);
 });
 
+} // end registerHandlers
+
 // Start the server
 async function main() {
-	const transport = new StdioServerTransport();
-	await server.connect(transport);
-	console.error('RGAA MCP Server running on stdio');
+	const args = process.argv.slice(2);
+	const httpMode = args.includes('--http');
+	const port = parseInt(args.find(a => a.startsWith('--port='))?.split('=')[1] || '3001', 10);
+
+	if (httpMode) {
+		// HTTP mode: Streamable HTTP transport for remote access
+		const { StreamableHTTPServerTransport } = require('@modelcontextprotocol/sdk/server/streamableHttp.js');
+		const http = require('http');
+		const { randomUUID } = require('crypto');
+
+		// Track active sessions
+		const transports = {};
+
+		const httpServer = http.createServer(async (req, res) => {
+			// CORS headers for remote access
+			res.setHeader('Access-Control-Allow-Origin', '*');
+			res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, OPTIONS');
+			res.setHeader('Access-Control-Allow-Headers', 'Content-Type, mcp-session-id');
+			res.setHeader('Access-Control-Expose-Headers', 'mcp-session-id');
+
+			if (req.method === 'OPTIONS') {
+				res.writeHead(204);
+				res.end();
+				return;
+			}
+
+			// Only handle /mcp endpoint
+			const url = new URL(req.url, `http://localhost:${port}`);
+			if (url.pathname !== '/mcp') {
+				res.writeHead(404, { 'Content-Type': 'application/json' });
+				res.end(JSON.stringify({ error: 'Not found. MCP endpoint is at /mcp' }));
+				return;
+			}
+
+			// Get or create session
+			const sessionId = req.headers['mcp-session-id'];
+
+			if (req.method === 'POST' && !sessionId) {
+				// New session: create transport and connect server
+				const transport = new StreamableHTTPServerTransport({
+					sessionIdGenerator: () => randomUUID(),
+					onsessioninitialized: (id) => {
+						transports[id] = transport;
+					},
+				});
+
+				transport.onclose = () => {
+					if (transport.sessionId) {
+						delete transports[transport.sessionId];
+					}
+				};
+
+				// Each session gets its own server instance
+				const sessionServer = new Server(
+					{ name: 'rgaa-server', version: '1.0.0' },
+					{ capabilities: { tools: {}, resources: {} } }
+				);
+
+				// Re-register all handlers on the session server
+				registerHandlers(sessionServer);
+				await sessionServer.connect(transport);
+
+				// Read body and handle
+				const body = await readBody(req);
+				await transport.handleRequest(req, res, body);
+			} else if (sessionId && transports[sessionId]) {
+				// Existing session
+				const transport = transports[sessionId];
+				if (req.method === 'POST') {
+					const body = await readBody(req);
+					await transport.handleRequest(req, res, body);
+				} else if (req.method === 'GET') {
+					await transport.handleRequest(req, res);
+				} else if (req.method === 'DELETE') {
+					await transport.handleRequest(req, res);
+				}
+			} else if (sessionId) {
+				// Unknown session
+				res.writeHead(400, { 'Content-Type': 'application/json' });
+				res.end(JSON.stringify({ error: 'Unknown session' }));
+			} else {
+				res.writeHead(400, { 'Content-Type': 'application/json' });
+				res.end(JSON.stringify({ error: 'Missing mcp-session-id header' }));
+			}
+		});
+
+		httpServer.listen(port, () => {
+			console.error(`RGAA MCP Server running on http://0.0.0.0:${port}/mcp`);
+		});
+	} else {
+		// Stdio mode: local usage with Claude Code / Claude Desktop
+		const transport = new StdioServerTransport();
+		registerHandlers(server);
+		await server.connect(transport);
+		console.error('RGAA MCP Server running on stdio');
+	}
+}
+
+// Helper: read HTTP request body as JSON
+function readBody(req) {
+	return new Promise((resolve, reject) => {
+		let data = '';
+		req.on('data', chunk => { data += chunk; });
+		req.on('end', () => {
+			try {
+				resolve(data ? JSON.parse(data) : undefined);
+			} catch (e) {
+				reject(new Error('Invalid JSON body'));
+			}
+		});
+		req.on('error', reject);
+	});
 }
 
 main().catch(console.error);
