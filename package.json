@@ -4,7 +4,7 @@
   "description": "RGAA (Référentiel Général d'Amélioration de l'Accessibilité) - Web version by Tanaguru",
   "private": true,
   "scripts": {
-    "build:css": "lessc less/style.less css/style.css && cleancss -o css/style.min.css css/style.css",
+    "build:css": "lessc --math=always less/style.less css/style.css && cleancss -o css/style.min.css css/style.css",
     "watch:css": "nodemon --watch less -e less --exec \"npm run build:css\"",
     "build": "npm run build:css",
     "serve": "npx serve . -l 8000",

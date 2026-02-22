@@ -754,8 +754,8 @@ ol {
   margin-top: 1.5em;
 }
 li {
-  margin-top: 1.5em/2;
-  margin-bottom: 1.5em/2;
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
 }
 /* Typography for small screens
 [fr] http://www.alsacreations.com/astuce/lire/1177 */
@@ -960,14 +960,14 @@ iframe {
   }
 }
 #skiplinks {
-  margin: 10px/2 10px;
+  margin: 5px 10px;
   color: #222;
 }
 main .skiplink {
   text-align: center;
 }
 main .skiplink a {
-  margin: 0 10px/2;
+  margin: 0 5px;
 }
 main .thematique .skiplink {
   text-align: right;
@@ -1241,7 +1241,7 @@ main .thematique .skiplink {
   #nav a,
   #nav .on {
     display: block;
-    padding: 10px/2 10px;
+    padding: 5px 10px;
   }
 }
 @media (min-width: 480px) {
@@ -1328,7 +1328,7 @@ main .thematique .skiplink {
 #navtoc li a,
 #navtoc .filter {
   display: block;
-  padding: 10px/2;
+  padding: 5px;
 }
 #navtoc .filter input,
 #navtoc .filter label {
@@ -1367,7 +1367,7 @@ main .thematique .skiplink {
 }
 @media (min-width: 640px) {
   #footer .page {
-    padding: 1.5em 0 1.5em/4;
+    padding: 1.5em 0 0.375em;
   }
 }
 /* --------------------------------------------------
@@ -1491,7 +1491,7 @@ tt {
 }
 #howto h3 {
   margin: 0;
-  padding: 1.5em/2 0;
+  padding: 0.75em 0;
 }
 .thematique header h3,
 .thematique h4 {
@@ -1502,7 +1502,7 @@ tt {
   margin: 1.5em 0;
 }
 .thematique aside p {
-  margin: 1.5em/2 0;
+  margin: 0.75em 0;
 }
 .thematique .tags {
   margin-top: 10px;
@@ -1561,14 +1561,14 @@ tt {
 }
 .thematique header nav li {
   display: inline-block;
-  margin: 10px/2 10px/3;
+  margin: 5px 3.33333333px;
 }
 .thematique header nav li a {
   display: block;
   margin: 0;
-  padding: 10px/2 10px;
+  padding: 5px 10px;
   border: 1px solid;
-  border-radius: 10px/2;
+  border-radius: 5px;
   color: #2C699E;
   font-weight: bold;
 }
@@ -1606,12 +1606,12 @@ tt {
   margin-bottom: 1.5em;
 }
 .thematique section > ul ul {
-  margin-top: 10px/2;
+  margin-top: 5px;
   list-style-type: disc;
   font-size: 0.9em;
 }
 .thematique section > ul ul li {
-  margin-bottom: 10px/2;
+  margin-bottom: 5px;
 }
 /* Glossary */
 .section-glossary {
