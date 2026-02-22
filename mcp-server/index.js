@@ -44,6 +44,74 @@ function loadData() {
 
 const data = loadData();
 
+/**
+ * Normalize French text: remove accents/diacritics and lowercase.
+ * "contrasté" → "contraste", "éléments" → "elements"
+ */
+function normalizeAccents(text) {
+	return text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+}
+
+/**
+ * Simple French stemmer - strips common inflectional suffixes
+ * to find word roots for variant matching.
+ * "contrastées" → "contrast", "contraster" → "contrast", "images" → "imag"
+ */
+function frenchStem(word) {
+	if (word.length < 5) return word;
+
+	const suffixes = [
+		'issements', 'issement',
+		'ements', 'ement',
+		'antes', 'ante', 'ants', 'ant',
+		'euses', 'euse', 'eurs', 'eur',
+		'ibles', 'ible', 'ables', 'able',
+		'ations', 'ation', 'tions', 'tion',
+		'ives', 'ive',
+		'ees', 'ee',
+		'er', 'ez',
+		'es',
+		'e', 's',
+	];
+
+	for (const suffix of suffixes) {
+		if (word.endsWith(suffix) && word.length - suffix.length >= 4) {
+			return word.slice(0, -suffix.length);
+		}
+	}
+
+	return word;
+}
+
+/**
+ * French-aware text matching: handles accent variants and word inflections.
+ * "contraste" matches text containing "contrasté", "contrastées", "contraster", etc.
+ */
+function frenchMatch(text, query) {
+	const normalizedText = normalizeAccents(text);
+	const normalizedQuery = normalizeAccents(query);
+
+	// 1. Direct substring match after accent normalization (handles most cases)
+	if (normalizedText.includes(normalizedQuery)) return true;
+
+	// 2. Stem-based matching: each query word (≥3 chars) must match a text word by stem
+	const queryWords = normalizedQuery.split(/\s+/).filter(w => w.length >= 3);
+	if (queryWords.length === 0) return false;
+
+	const textWords = normalizedText.split(/[^a-z0-9]+/).filter(w => w.length >= 2);
+
+	return queryWords.every(qw => {
+		const qStem = frenchStem(qw);
+		return textWords.some(tw => {
+			const tStem = frenchStem(tw);
+			// Match if stems are equal, or one is a prefix of the other (min 4 chars)
+			return qStem === tStem ||
+				(qStem.length >= 4 && tStem.startsWith(qStem)) ||
+				(tStem.length >= 4 && qStem.startsWith(tStem));
+		});
+	});
+}
+
 // Create MCP server
 const server = new Server(
 	{
@@ -65,10 +133,9 @@ function searchCriteria(query, version = 'rgaa41', level = null) {
 	const versionData = data.versions[version];
 	if (!versionData) return { error: `Unknown version: ${version}. Available: ${Object.keys(data.versions).join(', ')}` };
 
-	const q = query.toLowerCase();
 	let results = versionData.criteria.filter(c => {
-		const text = `${c.title} ${c.number} ${c.theme}`.toLowerCase();
-		return text.includes(q);
+		const text = `${c.title} ${c.number} ${c.theme}`;
+		return frenchMatch(text, query);
 	});
 
 	if (level) {
@@ -137,9 +204,8 @@ function searchGlossary(query, version = 'rgaa41') {
 	const versionData = data.versions[version];
 	if (!versionData) return { error: `Unknown version: ${version}` };
 
-	const q = query.toLowerCase();
 	const results = versionData.glossary.filter(t => {
-		return t.term.toLowerCase().includes(q) || t.definition.toLowerCase().includes(q);
+		return frenchMatch(t.term, query) || frenchMatch(t.definition, query);
 	});
 
 	return {
@@ -198,7 +264,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 	tools: [
 		{
 			name: 'search_criteria',
-			description: 'Search RGAA accessibility criteria by keyword. Returns matching criteria with their level, theme, and test count.',
+			description: 'Search RGAA accessibility criteria by keyword. Supports French variants (accent-insensitive, handles inflections: "contraste" also matches "contrasté", "contrastées", "contraster"). Returns matching criteria with their level, theme, and test count.',
 			inputSchema: {
 				type: 'object',
 				properties: {
@@ -245,7 +311,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 		},
 		{
 			name: 'search_glossary',
-			description: 'Search the RGAA glossary for accessibility terms and definitions.',
+			description: 'Search the RGAA glossary for accessibility terms and definitions. Supports French variants (accent-insensitive, handles inflections: "contraste" also matches "contrasté", "contrastées", "contraster").',
 			inputSchema: {
 				type: 'object',
 				properties: {
