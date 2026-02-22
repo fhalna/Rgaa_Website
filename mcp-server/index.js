@@ -277,6 +277,49 @@ function searchGlossary(query, version = 'rgaa41') {
 }
 
 /**
+ * Tool: search_tests
+ */
+function searchTests(query, version = 'rgaa41', level = null) {
+	const versionData = data.versions[version];
+	if (!versionData) return { error: `Unknown version: ${version}. Available: ${Object.keys(data.versions).join(', ')}` };
+
+	const results = [];
+	for (const c of versionData.criteria) {
+		if (level && c.level !== level.toUpperCase()) continue;
+
+		for (const t of c.tests) {
+			const testText = `${t.description || ''} ${t.methodology || ''}`;
+			if (frenchMatch(testText, query)) {
+				results.push({
+					number: t.number,
+					description: t.description,
+					methodology: t.methodology || undefined,
+					glossaryRefs: t.glossaryRefs && t.glossaryRefs.length > 0
+						? t.glossaryRefs.map(refId => {
+							const term = versionData.glossary.find(g => g.id === refId);
+							return term ? term.term : refId;
+						})
+						: undefined,
+					criterion: {
+						number: c.number,
+						title: c.title,
+						level: c.level,
+						theme: c.theme,
+					},
+				});
+			}
+		}
+	}
+
+	return {
+		version: versionData.label,
+		query,
+		resultCount: results.length,
+		tests: results,
+	};
+}
+
+/**
  * Tool: get_criteria_by_theme
  */
 function getCriteriaByTheme(themeId, version = 'rgaa41') {
@@ -370,6 +413,19 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 			},
 		},
 		{
+			name: 'search_tests',
+			description: 'Search RGAA tests by keyword. Searches in test descriptions and methodologies. Returns matching tests with their full content, linked glossary terms, and parent criterion. Useful for technical searches (e.g. "aria-hidden", "fieldset", "alt", "tabindex"). Supports French variants (accent-insensitive, inflections).',
+			inputSchema: {
+				type: 'object',
+				properties: {
+					query: { type: 'string', description: 'Search query (matches against test description and methodology)' },
+					version: { type: 'string', description: 'RGAA version: rgaa41 (default), rgaa4, rgaa3', default: 'rgaa41' },
+					level: { type: 'string', description: 'Filter by WCAG level: A, AA, AAA', enum: ['A', 'AA', 'AAA'] },
+				},
+				required: ['query'],
+			},
+		},
+		{
 			name: 'search_glossary',
 			description: 'Search the RGAA glossary for accessibility terms and definitions. Each term includes linkedCriteria: the list of criteria and tests that reference it. Supports French variants (accent-insensitive, inflections).',
 			inputSchema: {
@@ -411,6 +467,9 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 			break;
 		case 'get_criteria_by_theme':
 			result = getCriteriaByTheme(args.themeId, args.version);
+			break;
+		case 'search_tests':
+			result = searchTests(args.query, args.version, args.level);
 			break;
 		case 'search_glossary':
 			result = searchGlossary(args.query, args.version);
