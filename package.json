@@ -7,7 +7,7 @@
     "build:css": "lessc less/style.less css/style.css && cleancss -o css/style.min.css css/style.css",
     "watch:css": "nodemon --watch less -e less --exec \"npm run build:css\"",
     "build": "npm run build:css",
-    "serve": "php -S localhost:8000 -t .",
+    "serve": "npx serve . -l 8000",
     "dev": "concurrently \"npm run watch:css\" \"npm run serve\"",
     "test": "npm run test:html && npm run test:links",
     "test:html": "node tests/validate-html.js",
