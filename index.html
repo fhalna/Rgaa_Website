@@ -213,9 +213,9 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images structurées au moyen d’un élément <code><img></code> ou d’un élément possédant l’attribut WAI-ARIA <code>role="img"</code> ;</li>
+									<li>Retrouver dans le document les images structurées au moyen d’un élément <code>&lt;img&gt;</code> ou d’un élément possédant l’attribut WAI-ARIA <code>role="img"</code> ;</li>
 									<li>Pour chaque image, déterminer si l’image est porteuse d’information ;</li>
-									<li>Dans le cas où il s’agit d’un élément <code><img></code>, vérifier que l’image est pourvue au moins d’une alternative textuelle parmi les suivantes :</li>
+									<li>Dans le cas où il s’agit d’un élément <code>&lt;img&gt;</code>, vérifier que l’image est pourvue au moins d’une alternative textuelle parmi les suivantes :</li>
 									<ul>
 									<li>Passage de texte associé via l’attribut WAI-ARIA <code>aria-labelledby</code> ;</li>
 									<li>Contenu de l’attribut WAI-ARIA <code>aria-label</code> ;</li>
@@ -237,8 +237,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><area></code> ;</li>
-									<li>Pour chaque élément <code><area></code>, déterminer si la zone réactive est porteuse d’information ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;area&gt;</code> ;</li>
+									<li>Pour chaque élément <code>&lt;area&gt;</code>, déterminer si la zone réactive est porteuse d’information ;</li>
 									<li>Vérifier que la zone réactive est pourvue au moins d’une alternative textuelle parmi les suivantes :</li>
 									<ul>
 									<li>Contenu de l’attribut WAI-ARIA <code>aria-label</code> ;</li>
@@ -254,9 +254,9 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><input></code> pourvus de l’attribut <code>type="image"</code> ;</li>
-									<li>Pour chaque élément <code><input></code> pourvu de l’attribut type="image", déterminer si l’image utilisée est porteuse d’information ;</li>
-									<li>Vérifier que l’élément <code><input></code> est pourvu au moins d’une alternative textuelle parmi les suivantes :</li>
+									<li>Retrouver dans le document les éléments <code>&lt;input&gt;</code> pourvus de l’attribut <code>type="image"</code> ;</li>
+									<li>Pour chaque élément <code>&lt;input&gt;</code> pourvu de l’attribut type="image", déterminer si l’image utilisée est porteuse d’information ;</li>
+									<li>Vérifier que l’élément <code>&lt;input&gt;</code> est pourvu au moins d’une alternative textuelle parmi les suivantes :</li>
 									<ul>
 									<li>Passage de texte associé via l’attribut WAI-ARIA <code>aria-labelledby</code> ;</li>
 									<li>Contenu de l’attribut WAI-ARIA <code>aria-label</code> ;</li>
@@ -273,8 +273,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><img></code> pourvus de l’attribut <code>ismap</code> ;</li>
-									<li>Pour chaque élément <code><img></code> pourvu de l’attribut <code>ismap</code>, vérifier la présence d’un lien ou d’un ensemble de liens (ou bien d’un autre type de composant d’interface qui jouerait un rôle similaire comme une liste de sélection, par exemple) permettant d’accéder aux mêmes ressources que lorsque l’image fait l’objet d’un clic.</li>
+									<li>Retrouver dans le document les éléments <code>&lt;img&gt;</code> pourvus de l’attribut <code>ismap</code> ;</li>
+									<li>Pour chaque élément <code>&lt;img&gt;</code> pourvu de l’attribut <code>ismap</code>, vérifier la présence d’un lien ou d’un ensemble de liens (ou bien d’un autre type de composant d’interface qui jouerait un rôle similaire comme une liste de sélection, par exemple) permettant d’accéder aux mêmes ressources que lorsque l’image fait l’objet d’un clic.</li>
 									<li>Si c’est le cas, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -290,13 +290,13 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><svg></code> ;</li>
-									<li>Pour chaque élément <code><svg></code>, déterminer si l’image est porteuse d’information ;</li>
-									<li>S’assurer que l’élément <code><svg></code> est pourvu d’un attribut WAI-ARIA <code>role="img"</code> ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;svg&gt;</code> ;</li>
+									<li>Pour chaque élément <code>&lt;svg&gt;</code>, déterminer si l’image est porteuse d’information ;</li>
+									<li>S’assurer que l’élément <code>&lt;svg&gt;</code> est pourvu d’un attribut WAI-ARIA <code>role="img"</code> ;</li>
 									<li>Si ce n’est pas le cas, le test est invalidé.</li>
-									<li>Le cas échéant, vérifier que l’élément <code><svg></code> est pourvu au moins d’une alternative textuelle parmi les suivantes :</li>
+									<li>Le cas échéant, vérifier que l’élément <code>&lt;svg&gt;</code> est pourvu au moins d’une alternative textuelle parmi les suivantes :</li>
 									<ul>
-									<li>Contenu de l’élément <code><title></code> ;</li>
+									<li>Contenu de l’élément <code>&lt;title&gt;</code> ;</li>
 									<li>Passage de texte associé via l’attribut WAI-ARIA <code>aria-labelledby</code> ;</li>
 									<li>Contenu de l’attribut WAI-ARIA <code>aria-label</code> ;</li>
 									</ul>
@@ -316,20 +316,20 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les balises ouvrantes <code><object></code> pourvues de l'attribut <code>type="image/…"</code> ;</li>
-									<li>Pour chaque balise ouvrante <code><object></code> pourvue de l'attribut <code>type="image/…"</code>, déterminer si l’image utilisée est porteuse d'information ;</li>
-									<li>Vérifier que l’élément <code><object></code> est pourvu d’un attribut WAI-ARIA <code>role="img"</code> ;</li>
-									<li>Vérifier que l’élément <code><object></code> est pourvu au moins d’une alternative textuelle parmi les suivantes :</li>
+									<li>Retrouver dans le document les balises ouvrantes <code>&lt;object&gt;</code> pourvues de l'attribut <code>type="image/…"</code> ;</li>
+									<li>Pour chaque balise ouvrante <code>&lt;object&gt;</code> pourvue de l'attribut <code>type="image/…"</code>, déterminer si l’image utilisée est porteuse d'information ;</li>
+									<li>Vérifier que l’élément <code>&lt;object&gt;</code> est pourvu d’un attribut WAI-ARIA <code>role="img"</code> ;</li>
+									<li>Vérifier que l’élément <code>&lt;object&gt;</code> est pourvu au moins d’une alternative textuelle parmi les suivantes :</li>
 									<ul>
 									<li>Passage de texte associé via l’attribut WAI-ARIA <code>aria-labelledby</code> ;</li>
 									<li>Contenu de l’attribut WAI-ARIA <code>aria-label</code> ;</li>
 									<li>Contenu de l’attribut <code>title</code>.</li>
 									</ul>
 									<li>Si au moins une alternative textuelle est trouvée, <strong>le test est validé</strong> ;</li>
-									<li>Sinon, vérifier que l'élément <code><object></code> est :</li>
+									<li>Sinon, vérifier que l'élément <code>&lt;object&gt;</code> est :</li>
 									<ul>
 									<li>Soit immédiatement suivi d'un lien ou bouton adjacent permettant d'accéder à un contenu alternatif ;</li>
-									<li>Soit un mécanisme permet à l'utilisateur de remplacer l'élément <code><object></code> par un contenu alternatif.</li>
+									<li>Soit un mécanisme permet à l'utilisateur de remplacer l'élément <code>&lt;object&gt;</code> par un contenu alternatif.</li>
 									</ul>
 									<li>Si c'est le cas, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -347,19 +347,19 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Pour chaque élément <code><embed></code> pourvu de l’attribut <code>type="image/…"</code>, déterminer si l’image utilisée est porteuse d’information ;</li>
-									<li>Vérifier que l’élément <code><embed></code> est pourvu d’un attribut WAI-ARIA <code>role="img"</code> ;</li>
-									<li>Vérifier que l’élément <code><embed></code> est pourvu au moins d’une alternative textuelle parmi les suivantes :</li>
+									<li>Pour chaque élément <code>&lt;embed&gt;</code> pourvu de l’attribut <code>type="image/…"</code>, déterminer si l’image utilisée est porteuse d’information ;</li>
+									<li>Vérifier que l’élément <code>&lt;embed&gt;</code> est pourvu d’un attribut WAI-ARIA <code>role="img"</code> ;</li>
+									<li>Vérifier que l’élément <code>&lt;embed&gt;</code> est pourvu au moins d’une alternative textuelle parmi les suivantes :</li>
 									<ul>
 									<li>Passage de texte associé via l’attribut WAI-ARIA <code>aria-labelledby</code> ;</li>
 									<li>Contenu de l’attribut WAI-ARIA <code>aria-label</code> ;</li>
 									<li>Contenu de l’attribut <code>title</code>.</li>
 									</ul>
 									<li>Si au moins une alternative textuelle est trouvée, <strong>le test est validé</strong> ;</li>
-									<li>Sinon, vérifier que l’élément <code><embed></code> est :</li>
+									<li>Sinon, vérifier que l’élément <code>&lt;embed&gt;</code> est :</li>
 									<ul>
 									<li>Soit immédiatement suivi d’un lien ou bouton adjacent permettant d’accéder à un contenu alternatif ;</li>
-									<li>Soit un mécanisme permet à l’utilisateur de remplacer l’élément <code><embed></code> par un contenu alternatif.</li>
+									<li>Soit un mécanisme permet à l’utilisateur de remplacer l’élément <code>&lt;embed&gt;</code> par un contenu alternatif.</li>
 									</ul>
 									<li>Si c’est le cas, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -379,24 +379,24 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><canvas></code> ;</li>
-									<li>Pour chaque élément <code><canvas></code>, déterminer si l’image utilisée est porteuse d’information ;</li>
-									<li>Vérifier que l’élément <code><canvas></code> est pourvu d’un attribut WAI-ARIA <code>role="img"</code> ;</li>
-									<li>Vérifier que la balise ouvrante <code><canvas></code> est pourvue au moins d’une alternative textuelle parmi les suivantes :</li>
+									<li>Retrouver dans le document les éléments <code>&lt;canvas&gt;</code> ;</li>
+									<li>Pour chaque élément <code>&lt;canvas&gt;</code>, déterminer si l’image utilisée est porteuse d’information ;</li>
+									<li>Vérifier que l’élément <code>&lt;canvas&gt;</code> est pourvu d’un attribut WAI-ARIA <code>role="img"</code> ;</li>
+									<li>Vérifier que la balise ouvrante <code>&lt;canvas&gt;</code> est pourvue au moins d’une alternative textuelle parmi les suivantes :</li>
 									<ul>
 									<li>Passage de texte associé via l’attribut WAI-ARIA <code>aria-labelledby</code> ;</li>
 									<li>Contenu de l’attribut WAI-ARIA <code>aria-label</code>.</li>
 									</ul>
 									<li>Si au moins une alternative textuelle est trouvée, <strong>le test est validé</strong>.</li>
-									<li>Si les étapes 3 et 4 ne sont pas satisfaites, vérifier que l’élément <code><canvas></code> est :</li>
+									<li>Si les étapes 3 et 4 ne sont pas satisfaites, vérifier que l’élément <code>&lt;canvas&gt;</code> est :</li>
 									<ul>
-									<li>Soit pourvu d’un contenu alternatif présent entre les balises <code><canvas></code> et <code></canvas></code> ;</li>
+									<li>Soit pourvu d’un contenu alternatif présent entre les balises <code>&lt;canvas&gt;</code> et <code>&lt;/canvas&gt;</code> ;</li>
 									<li>Soit immédiatement suivi d’un lien ou bouton adjacent permettant d’accéder à un contenu alternatif ;</li>
-									<li>Soit un mécanisme permet à l’utilisateur de remplacer l’élément <code><canvas></code> par un contenu alternatif.</li>
+									<li>Soit un mécanisme permet à l’utilisateur de remplacer l’élément <code>&lt;canvas&gt;</code> par un contenu alternatif.</li>
 									</ul>
 									<li>Si c’est le cas, <strong>le test est validé</strong>.</li>
 									</ol>
-									<p>Note : si l'élément <code><canvas></code> dispose d'un rôle <code>img</code>, son alternative ne peut  être fournie que par les techniques listées à l'étape 4.</p>
+									<p>Note : si l'élément <code>&lt;canvas&gt;</code> dispose d'un rôle <code>img</code>, son alternative ne peut  être fournie que par les techniques listées à l'étape 4.</p>
 								</div>
 							</details>
 						</li>
@@ -458,7 +458,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images décoratives dépourvues de légende structurées au moyen d’un élément <code><img></code> ;</li>
+									<li>Retrouver dans le document les images décoratives dépourvues de légende structurées au moyen d’un élément <code>&lt;img&gt;</code> ;</li>
 									<li>Pour chaque image, vérifier que l’image ne possède pas d’attributs <code>aria-labelledby</code>, <code>aria-label</code> ou <code>title</code> et qu’elle possède :</li>
 									<ul>
 									<li>Soit un attribut <code>alt</code> vide (<code>alt=""</code>) ;</li>
@@ -480,8 +480,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images décoratives structurées au moyen d’un élément <code><area></code> (sans attribut <code>href</code>) ;</li>
-									<li>Pour chaque image, vérifier que l’élément <code><area></code> ne possède pas d’attributs <code>aria-labelledby</code>, <code>aria-label</code> ou <code>title</code> et qu’il possède :</li>
+									<li>Retrouver dans le document les images décoratives structurées au moyen d’un élément <code>&lt;area&gt;</code> (sans attribut <code>href</code>) ;</li>
+									<li>Pour chaque image, vérifier que l’élément <code>&lt;area&gt;</code> ne possède pas d’attributs <code>aria-labelledby</code>, <code>aria-label</code> ou <code>title</code> et qu’il possède :</li>
 									<ul>
 									<li>Soit un attribut <code>alt</code> vide (<code>alt=""</code>) ;</li>
 									<li>Soit un attribut WAI-ARIA <code>aria-hidden="true"</code> ou <code>role="presentation"</code>.</li>
@@ -502,12 +502,12 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images décoratives structurées dépourvues de légende au moyen d’un élément <code><object></code> (avec un attribut <code>type="image/…"</code>) ;</li>
-									<li>Pour chaque image, vérifier que la balise ouvrante <code><object></code> ne possède pas d’attributs <code>aria-labelledby</code>, <code>aria-label</code> ou <code>title</code> et qu’elle :</li>
+									<li>Retrouver dans le document les images décoratives structurées dépourvues de légende au moyen d’un élément <code>&lt;object&gt;</code> (avec un attribut <code>type="image/…"</code>) ;</li>
+									<li>Pour chaque image, vérifier que la balise ouvrante <code>&lt;object&gt;</code> ne possède pas d’attributs <code>aria-labelledby</code>, <code>aria-label</code> ou <code>title</code> et qu’elle :</li>
 									<ul>
 									<li>Possède un attribut WAI-ARIA <code>aria-hidden="true"</code> ;</li>
 									<li>Et est dépourvue d’alternative textuelle ;</li>
-									<li>Et est dépourvue d’un contenu alternatif présent entre les balises <code><object></code> et <code></object></code>.</li>
+									<li>Et est dépourvue d’un contenu alternatif présent entre les balises <code>&lt;object&gt;</code> et <code>&lt;/object&gt;</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -527,12 +527,12 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images décoratives dépourvues de légende structurées au moyen d’un élément <code><svg></code> ;</li>
-									<li>Pour chaque image, vérifier que l’élément <code><svg></code> ne possède pas d’attributs <code>aria-labelledby</code> ou <code>aria-label</code> et qu’il :</li>
+									<li>Retrouver dans le document les images décoratives dépourvues de légende structurées au moyen d’un élément <code>&lt;svg&gt;</code> ;</li>
+									<li>Pour chaque image, vérifier que l’élément <code>&lt;svg&gt;</code> ne possède pas d’attributs <code>aria-labelledby</code> ou <code>aria-label</code> et qu’il :</li>
 									<ul>
 									<li>Possède un attribut WAI-ARIA <code>aria-hidden="true"</code> ;</li>
 									<li>Et est dépourvu d’alternative textuelle (ainsi que ses éléments enfants) ;</li>
-									<li>Et ne contient pas d’éléments <code><title></code> et <code><desc></code> à moins que vides de contenu ;</li>
+									<li>Et ne contient pas d’éléments <code>&lt;title&gt;</code> et <code>&lt;desc&gt;</code> à moins que vides de contenu ;</li>
 									<li>Et est dépourvu d’attribut <code>title</code> (ainsi que ses éléments enfants).</li>
 									</ul>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
@@ -551,12 +551,12 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images décoratives dépourvues de légende structurées au moyen d’un élément <code><canvas></code> ;</li>
-									<li>Pour chaque image, vérifier que l’élément <code><canvas></code> ne possède pas d’attributs <code>aria-labelledby</code>, <code>aria-label</code> ou <code>title</code> et qu’il :</li>
+									<li>Retrouver dans le document les images décoratives dépourvues de légende structurées au moyen d’un élément <code>&lt;canvas&gt;</code> ;</li>
+									<li>Pour chaque image, vérifier que l’élément <code>&lt;canvas&gt;</code> ne possède pas d’attributs <code>aria-labelledby</code>, <code>aria-label</code> ou <code>title</code> et qu’il :</li>
 									<ul>
 									<li>Possède un attribut WAI-ARIA <code>aria-hidden="true"</code> ;</li>
 									<li>Et est dépourvu d’alternative textuelle ;</li>
-									<li>Et est dépourvu d’un contenu alternatif présent entre les balises <code><canvas></code> et <code></canvas></code>.</li>
+									<li>Et est dépourvu d’un contenu alternatif présent entre les balises <code>&lt;canvas&gt;</code> et <code>&lt;/canvas&gt;</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -573,8 +573,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images décoratives dépourvues de légende structurées au moyen d’un élément <code><embed></code> (avec un attribut <code>type="image/…"</code>) ;</li>
-									<li>Pour chaque image, vérifier que l’élément <code><embed></code> ne possède pas d’attributs <code>aria-labelledby</code>, <code>aria-label</code> ou <code>title</code> et qu’il :</li>
+									<li>Retrouver dans le document les images décoratives dépourvues de légende structurées au moyen d’un élément <code>&lt;embed&gt;</code> (avec un attribut <code>type="image/…"</code>) ;</li>
+									<li>Pour chaque image, vérifier que l’élément <code>&lt;embed&gt;</code> ne possède pas d’attributs <code>aria-labelledby</code>, <code>aria-label</code> ou <code>title</code> et qu’il :</li>
 									<ul>
 									<li>Possède un attribut WAI-ARIA <code>aria-hidden="true"</code> ;</li>
 									<li>Et est dépourvu d’alternative textuelle ;</li>
@@ -657,7 +657,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images structurées au moyen d’un élément <code><img></code> (ou d’un élément possédant l’attribut WAI-ARIA <code>role="img"</code>) pourvues d’une alternative textuelle ;</li>
+									<li>Retrouver dans le document les images structurées au moyen d’un élément <code>&lt;img&gt;</code> (ou d’un élément possédant l’attribut WAI-ARIA <code>role="img"</code>) pourvues d’une alternative textuelle ;</li>
 									<li>Pour chaque image, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -676,8 +676,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><area></code> pourvus d’une alternative textuelle ;</li>
-									<li>Pour chaque élément <code><area></code>, vérifier que l’alternative textuelle est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;area&gt;</code> pourvus d’une alternative textuelle ;</li>
+									<li>Pour chaque élément <code>&lt;area&gt;</code>, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -695,8 +695,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><input></code> pourvus de l’attribut <code>type="image"</code> et d’une alternative textuelle ;</li>
-									<li>Pour chaque élément <code><input></code> pourvu de l’attribut <code>type="image"</code>, vérifier que l’alternative textuelle est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;input&gt;</code> pourvus de l’attribut <code>type="image"</code> et d’une alternative textuelle ;</li>
+									<li>Pour chaque élément <code>&lt;input&gt;</code> pourvu de l’attribut <code>type="image"</code>, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -714,8 +714,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><object></code> pourvus de l’attribut <code>type="image/…"</code> et d’une alternative textuelle ;</li>
-									<li>Pour chaque élément <code><object></code> pourvu de l’attribut <code>type="image/…"</code>, vérifier que l’alternative textuelle est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;object&gt;</code> pourvus de l’attribut <code>type="image/…"</code> et d’une alternative textuelle ;</li>
+									<li>Pour chaque élément <code>&lt;object&gt;</code> pourvu de l’attribut <code>type="image/…"</code>, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -733,8 +733,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><embed></code> pourvus de l’attribut <code>type="image/…"</code> et d’une alternative textuelle ;</li>
-									<li>Pour chaque élément <code><embed></code> pourvu de l’attribut <code>type="image/…"</code>, vérifier que l’alternative textuelle est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;embed&gt;</code> pourvus de l’attribut <code>type="image/…"</code> et d’une alternative textuelle ;</li>
+									<li>Pour chaque élément <code>&lt;embed&gt;</code> pourvu de l’attribut <code>type="image/…"</code>, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -751,8 +751,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><svg></code> pourvus d’une alternative textuelle ;</li>
-									<li>Pour chaque élément <code><svg></code>, vérifier que l’alternative textuelle est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;svg&gt;</code> pourvus d’une alternative textuelle ;</li>
+									<li>Pour chaque élément <code>&lt;svg&gt;</code>, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -770,8 +770,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><canvas></code> pourvus d’une alternative textuelle ;</li>
-									<li>Pour chaque élément <code><canvas></code>, vérifier que l’alternative textuelle est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;canvas&gt;</code> pourvus d’une alternative textuelle ;</li>
+									<li>Pour chaque élément <code>&lt;canvas&gt;</code>, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -782,8 +782,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><canvas></code> pourvus d’un contenu alternatif entre les balises <code><canvas></code> et <code></canvas></code> ;</li>
-									<li>Pour chaque élément <code><canvas></code>, vérifier que le contenu alternatif est correctement restitué par les technologies d’assistance ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;canvas&gt;</code> pourvus d’un contenu alternatif entre les balises <code>&lt;canvas&gt;</code> et <code>&lt;/canvas&gt;</code> ;</li>
+									<li>Pour chaque élément <code>&lt;canvas&gt;</code>, vérifier que le contenu alternatif est correctement restitué par les technologies d’assistance ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -836,7 +836,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images structurées au moyen d’un élément <code><img></code> pourvues d’une alternative textuelle et utilisées comme CAPTCHA ou comme image-test ;</li>
+									<li>Retrouver dans le document les images structurées au moyen d’un élément <code>&lt;img&gt;</code> pourvues d’une alternative textuelle et utilisées comme CAPTCHA ou comme image-test ;</li>
 									<li>Pour chaque image, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -855,8 +855,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><area></code> pourvus d’une alternative textuelle et utilisés comme CAPTCHA ou comme image-test ;</li>
-									<li>Pour chaque élément <code><area></code>, vérifier que l’alternative textuelle est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;area&gt;</code> pourvus d’une alternative textuelle et utilisés comme CAPTCHA ou comme image-test ;</li>
+									<li>Pour chaque élément <code>&lt;area&gt;</code>, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -874,8 +874,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><input></code> pourvus de l’attribut <code>type="image"</code> et d’une alternative textuelle, et utilisés comme CAPTCHA ou comme image-test ;</li>
-									<li>Pour chaque élément <code><input></code> pourvu de l’attribut <code>type="image"</code>, vérifier que l’alternative textuelle est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;input&gt;</code> pourvus de l’attribut <code>type="image"</code> et d’une alternative textuelle, et utilisés comme CAPTCHA ou comme image-test ;</li>
+									<li>Pour chaque élément <code>&lt;input&gt;</code> pourvu de l’attribut <code>type="image"</code>, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -893,8 +893,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><object></code> pourvus de l’attribut <code>type="image/…"</code> et d’une alternative textuelle, et utilisés comme CAPTCHA ou comme image-test ;</li>
-									<li>Pour chaque élément <code><object></code> pourvu de l’attribut <code>type="image/…"</code>, vérifier que l’alternative textuelle est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;object&gt;</code> pourvus de l’attribut <code>type="image/…"</code> et d’une alternative textuelle, et utilisés comme CAPTCHA ou comme image-test ;</li>
+									<li>Pour chaque élément <code>&lt;object&gt;</code> pourvu de l’attribut <code>type="image/…"</code>, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -912,8 +912,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><embed></code> pourvus de l’attribut <code>type="image/…"</code> et d’une alternative textuelle, et utilisés comme CAPTCHA ou comme image-test ;</li>
-									<li>Pour chaque élément <code><embed></code> pourvu de l’attribut <code>type="image/…"</code>, vérifier que l’alternative textuelle est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;embed&gt;</code> pourvus de l’attribut <code>type="image/…"</code> et d’une alternative textuelle, et utilisés comme CAPTCHA ou comme image-test ;</li>
+									<li>Pour chaque élément <code>&lt;embed&gt;</code> pourvu de l’attribut <code>type="image/…"</code>, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -930,8 +930,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><svg></code> pourvus d’une alternative textuelle et utilisés comme CAPTCHA ou comme image-test ;</li>
-									<li>Pour chaque élément <code><svg></code>, vérifier que l’alternative textuelle est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;svg&gt;</code> pourvus d’une alternative textuelle et utilisés comme CAPTCHA ou comme image-test ;</li>
+									<li>Pour chaque élément <code>&lt;svg&gt;</code>, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -949,8 +949,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><canvas></code> pourvus d’une alternative textuelle et utilisés comme CAPTCHA ou comme image-test ;</li>
-									<li>Pour chaque élément <code><canvas></code>, vérifier que l’alternative textuelle est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;canvas&gt;</code> pourvus d’une alternative textuelle et utilisés comme CAPTCHA ou comme image-test ;</li>
+									<li>Pour chaque élément <code>&lt;canvas&gt;</code>, vérifier que l’alternative textuelle est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -986,7 +986,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images (éléments <code><img></code>, <code><area></code>, <code><object></code>, <code><embed></code>, <code><svg></code>, <code><canvas></code> ou possédant un attribut WAI-ARIA <code>role="img"</code>) utilisés comme CAPTCHA ou comme image-test ;</li>
+									<li>Retrouver dans le document les images (éléments <code>&lt;img&gt;</code>, <code>&lt;area&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;svg&gt;</code>, <code>&lt;canvas&gt;</code> ou possédant un attribut WAI-ARIA <code>role="img"</code>) utilisés comme CAPTCHA ou comme image-test ;</li>
 									<li>Pour chaque image, vérifier qu’il existe :</li>
 									<ul>
 									<li>Soit une autre forme de CAPTCHA non graphique, au moins ;</li>
@@ -1007,7 +1007,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les boutons associés à une image (éléments <code><input></code> avec l’attribut <code>type="image"</code>) utilisés comme CAPTCHA ou comme image-test ;</li>
+									<li>Retrouver dans le document les boutons associés à une image (éléments <code>&lt;input&gt;</code> avec l’attribut <code>type="image"</code>) utilisés comme CAPTCHA ou comme image-test ;</li>
 									<li>Pour chaque bouton associé à une image, vérifier qu’il existe :</li>
 									<ul>
 									<li>Soit une autre forme de CAPTCHA non graphique, au moins ;</li>
@@ -1048,7 +1048,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images structurées au moyen d’un élément <code><img></code> (ou d’un élément possédant l’attribut WAI-ARIA <code>role="img"</code>) porteuses d’information qui nécessitent une description détaillée ;</li>
+									<li>Retrouver dans le document les images structurées au moyen d’un élément <code>&lt;img&gt;</code> (ou d’un élément possédant l’attribut WAI-ARIA <code>role="img"</code>) porteuses d’information qui nécessitent une description détaillée ;</li>
 									<li>Pour chaque image, vérifier qu’il existe :</li>
 									<ul>
 									<li>Soit un attribut longdesc qui donne l’adresse (url) d’une page ou d’un emplacement dans la page contenant la description détaillée ;</li>
@@ -1070,13 +1070,13 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><object></code> pourvus de l’attribut <code>type="image/…"</code>, porteurs d’information qui nécessitent une description détaillée ;</li>
-									<li>Pour chaque élément <code><object></code> pourvu de l’attribut <code>type="image/…"</code>, vérifier qu’il existe :</li>
+									<li>Retrouver dans le document les éléments <code>&lt;object&gt;</code> pourvus de l’attribut <code>type="image/…"</code>, porteurs d’information qui nécessitent une description détaillée ;</li>
+									<li>Pour chaque élément <code>&lt;object&gt;</code> pourvu de l’attribut <code>type="image/…"</code>, vérifier qu’il existe :</li>
 									<ul>
 									<li>Soit une alternative textuelle contenant la référence à une description détaillée adjacente à l’image ;</li>
 									<li>Soit un lien ou un bouton adjacent permettant d’accéder à la description détaillée.</li>
 									</ul>
-									<li>Si c’est le cas pour chaque élément <code><object></code> pourvu de l’attribut <code>type="image/…"</code>, <strong>le test est validé</strong>.</li>
+									<li>Si c’est le cas pour chaque élément <code>&lt;object&gt;</code> pourvu de l’attribut <code>type="image/…"</code>, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
 							</details>
@@ -1091,13 +1091,13 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><embed></code> pourvus de l’attribut <code>type="image/…"</code>, porteurs d’information qui nécessitent une description détaillée ;</li>
-									<li>Pour chaque élément <code><embed></code> pourvu de l’attribut <code>type="image/…"</code>, vérifier qu’il existe :</li>
+									<li>Retrouver dans le document les éléments <code>&lt;embed&gt;</code> pourvus de l’attribut <code>type="image/…"</code>, porteurs d’information qui nécessitent une description détaillée ;</li>
+									<li>Pour chaque élément <code>&lt;embed&gt;</code> pourvu de l’attribut <code>type="image/…"</code>, vérifier qu’il existe :</li>
 									<ul>
 									<li>Soit une alternative textuelle contenant la référence à une description détaillée adjacente à l’image ;</li>
 									<li>Soit un lien ou un bouton adjacent permettant d’accéder à la description détaillée.</li>
 									</ul>
-									<li>Si c’est le cas pour chaque élément <code><embed></code> pourvu de l’attribut <code>type="image/…"</code>, <strong>le test est validé</strong>.</li>
+									<li>Si c’est le cas pour chaque élément <code>&lt;embed&gt;</code> pourvu de l’attribut <code>type="image/…"</code>, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
 							</details>
@@ -1113,14 +1113,14 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><input></code> pourvus de l’attribut <code>type="image"</code>, porteurs d’information qui nécessitent une description détaillée ;</li>
-									<li>Pour chaque élément <code><input></code> pourvu de l’attribut <code>type="image"</code>, vérifier qu’il existe :</li>
+									<li>Retrouver dans le document les éléments <code>&lt;input&gt;</code> pourvus de l’attribut <code>type="image"</code>, porteurs d’information qui nécessitent une description détaillée ;</li>
+									<li>Pour chaque élément <code>&lt;input&gt;</code> pourvu de l’attribut <code>type="image"</code>, vérifier qu’il existe :</li>
 									<ul>
 									<li>Soit une alternative textuelle contenant la référence à une description détaillée adjacente à l’image ;</li>
 									<li>Soit un lien ou un bouton adjacent permettant d’accéder à la description détaillée ;</li>
 									<li>Soit un attribut WAI-ARIA aria-describedby associant un passage de texte faisant office de description détaillée.</li>
 									</ul>
-									<li>Si c’est le cas pour chaque élément <code><input></code> pourvu de l’attribut <code>type="image"</code>, <strong>le test est validé</strong>.</li>
+									<li>Si c’est le cas pour chaque élément <code>&lt;input&gt;</code> pourvu de l’attribut <code>type="image"</code>, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
 							</details>
@@ -1137,15 +1137,15 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><svg></code> porteurs d’information qui nécessitent une description détaillée ;</li>
-									<li>Pour chaque élément <code><svg></code>, vérifier qu’il existe :</li>
+									<li>Retrouver dans le document les éléments <code>&lt;svg&gt;</code> porteurs d’information qui nécessitent une description détaillée ;</li>
+									<li>Pour chaque élément <code>&lt;svg&gt;</code>, vérifier qu’il existe :</li>
 									<ul>
 									<li>Soit un attribut WAI-ARIA <code>aria-label</code> contenant l’alternative textuelle et une référence à une description détaillée adjacente ;</li>
 									<li>Soit un attribut WAI-ARIA <code>aria-labelledby</code> associant un passage de texte faisant office d’alternative textuelle et un autre faisant office de description détaillée ;</li>
 									<li>Soit un attribut WAI-ARIA <code>aria-describedby</code> associant un passage de texte faisant office de description détaillée ;</li>
 									<li>Soit un lien ou un bouton adjacent permettant d’accéder à la description détaillée.</li>
 									</ul>
-									<li>Si c’est le cas pour chaque élément <code><svg></code>, <strong>le test est validé</strong>.</li>
+									<li>Si c’est le cas pour chaque élément <code>&lt;svg&gt;</code>, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
 							</details>
@@ -1155,9 +1155,9 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><svg></code> porteurs d’information dont la description détaillée est fournie au moyen d’un attribut <code>aria-label</code>, <code>aria-labelledby</code> ou <code>aria-describedby</code> ;</li>
-									<li>Pour chaque élément <code><svg></code>, vérifier que le contenu de la description détaillée est correctement restitué par les technologies d’assistance ;</li>
-									<li>Si c’est le cas pour chaque élément <code><svg></code>, <strong>le test est validé</strong>.</li>
+									<li>Retrouver dans le document les éléments <code>&lt;svg&gt;</code> porteurs d’information dont la description détaillée est fournie au moyen d’un attribut <code>aria-label</code>, <code>aria-labelledby</code> ou <code>aria-describedby</code> ;</li>
+									<li>Pour chaque élément <code>&lt;svg&gt;</code>, vérifier que le contenu de la description détaillée est correctement restitué par les technologies d’assistance ;</li>
+									<li>Si c’est le cas pour chaque élément <code>&lt;svg&gt;</code>, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
 							</details>
@@ -1175,16 +1175,16 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><canvas></code> porteurs d’information qui nécessitent une description détaillée ;</li>
-									<li>Pour chaque élément <code><canvas></code>, vérifier qu’il existe :</li>
+									<li>Retrouver dans le document les éléments <code>&lt;canvas&gt;</code> porteurs d’information qui nécessitent une description détaillée ;</li>
+									<li>Pour chaque élément <code>&lt;canvas&gt;</code>, vérifier qu’il existe :</li>
 									<ul>
 									<li>Soit un attribut WAI-ARIA aria-label contenant l’alternative textuelle et une référence à une description détaillée adjacente ;</li>
 									<li>Soit un attribut WAI-ARIA aria-labelledby associant un passage de texte faisant office d’alternative textuelle et un autre faisant office de description détaillée ;</li>
-									<li>Soit un contenu textuel entre <code><canvas></code> et <code></canvas></code> faisant référence à une description détaillée adjacente à l’image bitmap ;</li>
-									<li>Soit un contenu textuel entre <code><canvas></code> et <code></canvas></code> faisant office de description détaillée ;</li>
+									<li>Soit un contenu textuel entre <code>&lt;canvas&gt;</code> et <code>&lt;/canvas&gt;</code> faisant référence à une description détaillée adjacente à l’image bitmap ;</li>
+									<li>Soit un contenu textuel entre <code>&lt;canvas&gt;</code> et <code>&lt;/canvas&gt;</code> faisant office de description détaillée ;</li>
 									<li>Soit un lien ou un bouton adjacent permettant d’accéder à la description détaillée.</li>
 									</ul>
-									<li>Si c’est le cas pour chaque élément <code><canvas></code>, <strong>le test est validé</strong>.</li>
+									<li>Si c’est le cas pour chaque élément <code>&lt;canvas&gt;</code>, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
 							</details>
@@ -1194,9 +1194,9 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><canvas></code> porteurs d’information dont la description détaillée est fournie au moyen d’un attribut <code>aria-label</code>, <code>aria-labelledby</code> ou <code>aria-describedby</code> ;</li>
-									<li>Pour chaque élément <code><canvas></code>, vérifier que le contenu de la description détaillée est correctement restitué par les technologies d’assistance ;</li>
-									<li>Si c’est le cas pour chaque élément <code><canvas></code>, <strong>le test est validé</strong>.</li>
+									<li>Retrouver dans le document les éléments <code>&lt;canvas&gt;</code> porteurs d’information dont la description détaillée est fournie au moyen d’un attribut <code>aria-label</code>, <code>aria-labelledby</code> ou <code>aria-describedby</code> ;</li>
+									<li>Pour chaque élément <code>&lt;canvas&gt;</code>, vérifier que le contenu de la description détaillée est correctement restitué par les technologies d’assistance ;</li>
+									<li>Si c’est le cas pour chaque élément <code>&lt;canvas&gt;</code>, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
 							</details>
@@ -1206,7 +1206,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images (éléments <code><img></code>, <code><input></code> avec l’attribut <code>type="image"</code>, <code><area></code>, <code><object></code>, <code><embed></code>, <code><svg></code>, <code><canvas></code> ou possédant un attribut WAI-ARIA <code>role="img"</code>) porteuses d’information dont la description détaillée utilise un attribut WAI-ARIA <code>aria-describedby</code> ;</li>
+									<li>Retrouver dans le document les images (éléments <code>&lt;img&gt;</code>, <code>&lt;input&gt;</code> avec l’attribut <code>type="image"</code>, <code>&lt;area&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;svg&gt;</code>, <code>&lt;canvas&gt;</code> ou possédant un attribut WAI-ARIA <code>role="img"</code>) porteuses d’information dont la description détaillée utilise un attribut WAI-ARIA <code>aria-describedby</code> ;</li>
 									<li>Pour chaque image, vérifier que le contenu de la description détaillée est correctement restitué par les technologies d’assistance ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -1274,7 +1274,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images structurées au moyen d’un élément <code><img></code> qui possèdent une description détaillée ;</li>
+									<li>Retrouver dans le document les images structurées au moyen d’un élément <code>&lt;img&gt;</code> qui possèdent une description détaillée ;</li>
 									<li>Pour chaque image, vérifier que la description détaillée est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -1292,8 +1292,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><input></code> pourvus de l’attribut <code>type="image"</code> qui possèdent une description détaillée ;</li>
-									<li>Pour chaque élément <code><input></code> pourvu de l’attribut <code>type="image"</code>, vérifier que la description détaillée est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;input&gt;</code> pourvus de l’attribut <code>type="image"</code> qui possèdent une description détaillée ;</li>
+									<li>Pour chaque élément <code>&lt;input&gt;</code> pourvu de l’attribut <code>type="image"</code>, vérifier que la description détaillée est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -1311,8 +1311,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><object></code> pourvus de l’attribut <code>type="image/…"</code> qui possèdent une description détaillée ;</li>
-									<li>Pour chaque élément <code><object></code> pourvu de l’attribut <code>type="image/…"</code>, vérifier que la description détaillée est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;object&gt;</code> pourvus de l’attribut <code>type="image/…"</code> qui possèdent une description détaillée ;</li>
+									<li>Pour chaque élément <code>&lt;object&gt;</code> pourvu de l’attribut <code>type="image/…"</code>, vérifier que la description détaillée est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -1330,8 +1330,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><embed></code> pourvus de l’attribut <code>type="image/…"</code> qui possèdent une description détaillée ;</li>
-									<li>Pour chaque élément <code><embed></code> pourvu de l’attribut <code>type="image/…"</code>, vérifier que la description détaillée est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;embed&gt;</code> pourvus de l’attribut <code>type="image/…"</code> qui possèdent une description détaillée ;</li>
+									<li>Pour chaque élément <code>&lt;embed&gt;</code> pourvu de l’attribut <code>type="image/…"</code>, vérifier que la description détaillée est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -1350,8 +1350,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><svg></code> qui possèdent une description détaillée ;</li>
-									<li>Pour chaque élément <code><svg></code>, vérifier que la description détaillée est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;svg&gt;</code> qui possèdent une description détaillée ;</li>
+									<li>Pour chaque élément <code>&lt;svg&gt;</code>, vérifier que la description détaillée est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -1371,8 +1371,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments <code><canvas></code> qui possèdent une description détaillée ;</li>
-									<li>Pour chaque élément <code><canvas></code>, vérifier que la description détaillée est pertinente ;</li>
+									<li>Retrouver dans le document les éléments <code>&lt;canvas&gt;</code> qui possèdent une description détaillée ;</li>
+									<li>Pour chaque élément <code>&lt;canvas&gt;</code>, vérifier que la description détaillée est pertinente ;</li>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -1402,7 +1402,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images texte structurées au moyen d’un élément <code><img></code> (ou d’un élément possédant l’attribut WAI-ARIA <code>role="img"</code>) ;</li>
+									<li>Retrouver dans le document les images texte structurées au moyen d’un élément <code>&lt;img&gt;</code> (ou d’un élément possédant l’attribut WAI-ARIA <code>role="img"</code>) ;</li>
 									<li>Pour chaque image, vérifier que :</li>
 									<ul>
 									<li>Soit il existe un mécanisme de remplacement ;</li>
@@ -1418,7 +1418,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les boutons “images texte” (élément <code><input></code> avec l’attribut <code>type="image"</code>) ;</li>
+									<li>Retrouver dans le document les boutons “images texte” (élément <code>&lt;input&gt;</code> avec l’attribut <code>type="image"</code>) ;</li>
 									<li>Pour chaque image, vérifier que :</li>
 									<ul>
 									<li>Soit il existe un mécanisme de remplacement ;</li>
@@ -1434,7 +1434,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images texte objet (élément <code><object></code> avec l’attribut <code>type="image/…"</code>) ;</li>
+									<li>Retrouver dans le document les images texte objet (élément <code>&lt;object&gt;</code> avec l’attribut <code>type="image/…"</code>) ;</li>
 									<li>Pour chaque image, vérifier que :</li>
 									<ul>
 									<li>Soit il existe un mécanisme de remplacement ;</li>
@@ -1450,7 +1450,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images texte embarquées (élément <code><embed></code> avec l’attribut <code>type="image/…"</code>) ;</li>
+									<li>Retrouver dans le document les images texte embarquées (élément <code>&lt;embed&gt;</code> avec l’attribut <code>type="image/…"</code>) ;</li>
 									<li>Pour chaque image, vérifier que :</li>
 									<ul>
 									<li>Soit il existe un mécanisme de remplacement ;</li>
@@ -1466,7 +1466,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images texte bitmap (élément <code><canvas></code>) ;</li>
+									<li>Retrouver dans le document les images texte bitmap (élément <code>&lt;canvas&gt;</code>) ;</li>
 									<li>Pour chaque image, vérifier que :</li>
 									<ul>
 									<li>Soit il existe un mécanisme de remplacement ;</li>
@@ -1482,7 +1482,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images texte vectorielle (élément <code><svg></code>) porteuse d’information et dont le texte n’est pas complètement structuré au moyen d’éléments <code><text></code> ;</li>
+									<li>Retrouver dans le document les images texte vectorielle (élément <code>&lt;svg&gt;</code>) porteuse d’information et dont le texte n’est pas complètement structuré au moyen d’éléments <code>&lt;text&gt;</code> ;</li>
 									<li>Pour chaque image, vérifier que :</li>
 									<ul>
 									<li>Soit il existe un mécanisme de remplacement ;</li>
@@ -1530,13 +1530,13 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images pourvues d’une légende structurées au moyen d’élément <code><img></code>, d’un élément <code><input></code> avec l’attribut <code>type="image"</code> ou d’un élément possédant l’attribut WAI-ARIA <code>role="img"</code> ;</li>
+									<li>Retrouver dans le document les images pourvues d’une légende structurées au moyen d’élément <code>&lt;img&gt;</code>, d’un élément <code>&lt;input&gt;</code> avec l’attribut <code>type="image"</code> ou d’un élément possédant l’attribut WAI-ARIA <code>role="img"</code> ;</li>
 									<li>Pour chaque image, vérifier que :</li>
 									<ul>
-									<li>L’image et sa légende sont contenues dans une balise <code><figure></code> ;</li>
-									<li>La balise <code><figure></code> possède une propriété WAI-ARIA <code>role="figure"</code> ou <code>role="group"</code> ;</li>
-									<li>La balise <code><figure></code> possède un attribut WAI-ARIA <code>aria-label</code> dont le contenu est identique au contenu de la légende ;</li>
-									<li>La légende est contenue dans une balise <code><figcaption></code>.</li>
+									<li>L’image et sa légende sont contenues dans une balise <code>&lt;figure&gt;</code> ;</li>
+									<li>La balise <code>&lt;figure&gt;</code> possède une propriété WAI-ARIA <code>role="figure"</code> ou <code>role="group"</code> ;</li>
+									<li>La balise <code>&lt;figure&gt;</code> possède un attribut WAI-ARIA <code>aria-label</code> dont le contenu est identique au contenu de la légende ;</li>
+									<li>La légende est contenue dans une balise <code>&lt;figcaption&gt;</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -1555,13 +1555,13 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images objet pourvues d’une légende (élément <code><object></code> avec l’attribut <code>type="image/…"</code>) ;</li>
+									<li>Retrouver dans le document les images objet pourvues d’une légende (élément <code>&lt;object&gt;</code> avec l’attribut <code>type="image/…"</code>) ;</li>
 									<li>Pour chaque image, vérifier que :</li>
 									<ul>
-									<li>L’image et sa légende sont contenues dans une balise <code><figure></code> ;</li>
-									<li>La balise <code><figure></code> possède une propriété WAI-ARIA <code>role="figure</code>" ou <code>role="group"</code> ;</li>
-									<li>La balise <code><figure></code> possède un attribut WAI-ARIA <code>aria-label</code> dont le contenu est identique au contenu de la légende ;</li>
-									<li>La légende est contenue dans une balise <code><figcaption></code>.</li>
+									<li>L’image et sa légende sont contenues dans une balise <code>&lt;figure&gt;</code> ;</li>
+									<li>La balise <code>&lt;figure&gt;</code> possède une propriété WAI-ARIA <code>role="figure</code>" ou <code>role="group"</code> ;</li>
+									<li>La balise <code>&lt;figure&gt;</code> possède un attribut WAI-ARIA <code>aria-label</code> dont le contenu est identique au contenu de la légende ;</li>
+									<li>La légende est contenue dans une balise <code>&lt;figcaption&gt;</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -1580,13 +1580,13 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images embarquées pourvues d’une légende (élément <code><embed></code> avec l’attribut <code>type="image/…"</code>) ;</li>
+									<li>Retrouver dans le document les images embarquées pourvues d’une légende (élément <code>&lt;embed&gt;</code> avec l’attribut <code>type="image/…"</code>) ;</li>
 									<li>Pour chaque image, vérifier que :</li>
 									<ul>
-									<li>L’image et sa légende sont contenues dans une balise <code><figure></code> ;</li>
-									<li>La balise <code><figure></code> possède une propriété WAI-ARIA <code>role="figure"</code> ou <code>role="group"</code> ;</li>
-									<li>La balise <code><figure></code> possède un attribut WAI-ARIA <code>aria-label</code> dont le contenu est identique au contenu de la légende ;</li>
-									<li>La légende est contenue dans une balise <code><figcaption></code>.</li>
+									<li>L’image et sa légende sont contenues dans une balise <code>&lt;figure&gt;</code> ;</li>
+									<li>La balise <code>&lt;figure&gt;</code> possède une propriété WAI-ARIA <code>role="figure"</code> ou <code>role="group"</code> ;</li>
+									<li>La balise <code>&lt;figure&gt;</code> possède un attribut WAI-ARIA <code>aria-label</code> dont le contenu est identique au contenu de la légende ;</li>
+									<li>La légende est contenue dans une balise <code>&lt;figcaption&gt;</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -1605,13 +1605,13 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images vectorielles pourvues d’une légende (élément <code><svg></code>) ;</li>
+									<li>Retrouver dans le document les images vectorielles pourvues d’une légende (élément <code>&lt;svg&gt;</code>) ;</li>
 									<li>Pour chaque image, vérifier que :</li>
 									<ul>
-									<li>L’image et sa légende sont contenues dans une balise <code><figure></code> ;</li>
-									<li>La balise <code><figure></code> possède une propriété WAI-ARIA <code>role="figure"</code> ou <code>role="group"</code> ;</li>
-									<li>La balise <code><figure></code> possède un attribut WAI-ARIA <code>aria-label</code> dont le contenu est identique au contenu de la légende ;</li>
-									<li>La légende est contenue dans une balise <code><figcaption></code>.</li>
+									<li>L’image et sa légende sont contenues dans une balise <code>&lt;figure&gt;</code> ;</li>
+									<li>La balise <code>&lt;figure&gt;</code> possède une propriété WAI-ARIA <code>role="figure"</code> ou <code>role="group"</code> ;</li>
+									<li>La balise <code>&lt;figure&gt;</code> possède un attribut WAI-ARIA <code>aria-label</code> dont le contenu est identique au contenu de la légende ;</li>
+									<li>La légende est contenue dans une balise <code>&lt;figcaption&gt;</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -1630,13 +1630,13 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les images bitmap (élément <code><canvas></code>) ;</li>
+									<li>Retrouver dans le document les images bitmap (élément <code>&lt;canvas&gt;</code>) ;</li>
 									<li>Pour chaque image, vérifier que :</li>
 									<ul>
-									<li>L’image et sa légende sont contenues dans une balise <code><figure></code> ;</li>
-									<li>La balise <code><figure></code> possède une propriété WAI-ARIA <code>role="figure"</code> ou <code>role="group"</code> ;</li>
-									<li>La balise <code><figure></code> possède un attribut WAI-ARIA <code>aria-label</code> dont le contenu est identique au contenu de la légende ;</li>
-									<li>La légende est contenue dans une balise <code><figcaption></code>.</li>
+									<li>L’image et sa légende sont contenues dans une balise <code>&lt;figure&gt;</code> ;</li>
+									<li>La balise <code>&lt;figure&gt;</code> possède une propriété WAI-ARIA <code>role="figure"</code> ou <code>role="group"</code> ;</li>
+									<li>La balise <code>&lt;figure&gt;</code> possède un attribut WAI-ARIA <code>aria-label</code> dont le contenu est identique au contenu de la légende ;</li>
+									<li>La légende est contenue dans une balise <code>&lt;figcaption&gt;</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque image, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -1696,7 +1696,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les cadres (élément <code><iframe></code> ou <code><frame></code>) ;</li>
+									<li>Retrouver dans le document les cadres (élément <code>&lt;iframe&gt;</code> ou <code>&lt;frame&gt;</code>) ;</li>
 									<li>Pour chaque cadre, vérifier qu’il possède un attribut <code>title </code>;</li>
 									<li>Si c’est le cas pour chaque cadre, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -1726,7 +1726,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les cadres (élément <code><iframe></code> ou <code><frame></code>) ;</li>
+									<li>Retrouver dans le document les cadres (élément <code>&lt;iframe&gt;</code> ou <code>&lt;frame&gt;</code>) ;</li>
 									<li>Pour chaque cadre pourvu d’un attribut <code>title</code>, vérifier que son contenu est pertinent ;</li>
 									<li>Si c’est le cas pour chaque cadre, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -2150,7 +2150,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les médias temporels (éléments <code><audio></code>, <code><video></code> ou <code><object></code>) seulement audio qui nécessitent une transcription textuelle ;</li>
+									<li>Retrouver dans le document les médias temporels (éléments <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code> ou <code>&lt;object&gt;</code>) seulement audio qui nécessitent une transcription textuelle ;</li>
 									<li>Pour chaque média temporel seulement audio, vérifier la présence d’une transcription textuelle :</li>
 									<ul>
 									<li>Soit accessible au moyen d’un bouton ou d’un lien adjacent (une URL ou une ancre) ;</li>
@@ -2175,7 +2175,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les médias temporels (éléments <code><video></code> ou <code><object></code>) seulement vidéo qui nécessitent une transcription textuelle ;</li>
+									<li>Retrouver dans le document les médias temporels (éléments <code>&lt;video&gt;</code> ou <code>&lt;object&gt;</code>) seulement vidéo qui nécessitent une transcription textuelle ;</li>
 									<li>Pour chaque média temporel seulement vidéo, vérifier la présence :</li>
 									<ul>
 									<li>Soit d’une version alternative audio seulement accessible au moyen d’un lien ou bouton adjacent (une URL ou une ancre) ;</li>
@@ -2202,7 +2202,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les médias temporels (éléments <code><video></code> ou <code><object></code>) synchronisés qui nécessitent une transcription textuelle ;</li>
+									<li>Retrouver dans le document les médias temporels (éléments <code>&lt;video&gt;</code> ou <code>&lt;object&gt;</code>) synchronisés qui nécessitent une transcription textuelle ;</li>
 									<li>Pour chaque média temporel synchronisé, vérifier la présence :</li>
 									<ul>
 									<li>Soit d’une transcription textuelle accessible au moyen d’un lien ou bouton adjacent (une URL ou une ancre) ;</li>
@@ -2358,8 +2358,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les médias temporels synchronisés possédant des sous-titres synchronisés au moyen d’un élément <code><track></code> ;</li>
-									<li>Pour chaque média temporel synchronisé, vérifier que la balise <code><track></code> possède un attribut <code>kind="caption"</code> ;</li>
+									<li>Retrouver dans le document les médias temporels synchronisés possédant des sous-titres synchronisés au moyen d’un élément <code>&lt;track&gt;</code> ;</li>
+									<li>Pour chaque média temporel synchronisé, vérifier que la balise <code>&lt;track&gt;</code> possède un attribut <code>kind="caption"</code> ;</li>
 									<li>Si c’est le cas pour chaque média temporel synchronisé, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -2693,7 +2693,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									</ul>
 									<li>Si c’est le cas, <strong>le test est validé</strong>.</li>
 									</ol>
-									<p>Note : les éléments suivants sont susceptibles de déclencher des sons au chargement de la page : éléments <code><audio></code>, <code><video></code>, <code><object></code>, <code><embed></code>, <code><bgsound></code> ou un code JavaScript (utilisation de la Web Audio API, par exemple).</p>
+									<p>Note : les éléments suivants sont susceptibles de déclencher des sons au chargement de la page : éléments <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;bgsound&gt;</code> ou un code JavaScript (utilisation de la Web Audio API, par exemple).</p>
 								</div>
 							</details>
 						</li>
@@ -2957,11 +2957,11 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les tableaux de données complexes (tableau de données - élément <code><table></code> ou élément pourvu d’un attribut WAI-ARIA <code>role="table"</code> - contenant des en-têtes qui ne sont pas répartis uniquement sur la première ligne et/ou la première colonne de la grille ou dont la portée n’est pas valable pour l’ensemble de la colonne ou de la ligne) ;</li>
+									<li>Retrouver dans le document les tableaux de données complexes (tableau de données - élément <code>&lt;table&gt;</code> ou élément pourvu d’un attribut WAI-ARIA <code>role="table"</code> - contenant des en-têtes qui ne sont pas répartis uniquement sur la première ligne et/ou la première colonne de la grille ou dont la portée n’est pas valable pour l’ensemble de la colonne ou de la ligne) ;</li>
 									<li>Pour chaque tableau de données complexe, vérifier qu’un passage de texte permettant de comprendre la nature et la structure du tableau, est présent :</li>
 									<ul>
-									<li>Soit dans l’élément <code><caption></code> ;</li>
-									<li>Soit dans l’attribut <code>summary</code> de l’élément <code><table></code> (dans les versions de HTML et de XHTML antérieures à HTML 5) ;</li>
+									<li>Soit dans l’élément <code>&lt;caption&gt;</code> ;</li>
+									<li>Soit dans l’attribut <code>summary</code> de l’élément <code>&lt;table&gt;</code> (dans les versions de HTML et de XHTML antérieures à HTML 5) ;</li>
 									<li>Soit dans un passage de texte lié au tableau avec l’attribut <code>aria-describedby</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque tableau de données complexe, <strong>le test est validé</strong>.</li>
@@ -3035,7 +3035,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Pour chaque tableau de mise en forme, vérifier que :</li>
 									<ul>
 									<li>L’ordre d’accès aux cellules est cohérent avec le contenu ;</li>
-									<li>L’élément <code><table></code> est pourvu d’un attribut WAI-ARIA <code>role="presentation"</code>.</li>
+									<li>L’élément <code>&lt;table&gt;</code> est pourvu d’un attribut WAI-ARIA <code>role="presentation"</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque tableau de mise en forme, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -3070,7 +3070,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Retrouver dans le document les tableaux de données pourvus d’un titre ;</li>
 									<li>Pour chaque titre, vérifier qu’il est fourni au moyen :</li>
 									<ul>
-									<li>Soit d’un élément <code><caption></code> ;</li>
+									<li>Soit d’un élément <code>&lt;caption&gt;</code> ;</li>
 									<li>Soit d’un attribut <code>title</code> ;</li>
 									<li>Soit d’un attribut WAI-ARIA <code>aria-label</code> ;</li>
 									<li>Soit d’un attribut WAI-ARIA <code>aria-labelledby</code> référençant un passage de texte.</li>
@@ -3143,7 +3143,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Retrouver dans le document les tableaux de données ;</li>
 									<li>Pour chaque en-tête de colonnes s’appliquant à la totalité de la colonne, vérifier que l’en-tête de colonne est structuré au moyen :</li>
 									<ul>
-									<li>Soit d’un élément <code><th></code> ;</li>
+									<li>Soit d’un élément <code>&lt;th&gt;</code> ;</li>
 									<li>Soit d’un élément pourvu d’un attribut WAI-ARIA <code>role="columnheader"</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque en-tête de colonne s’appliquant à la totalité de la colonne, <strong>le test est validé</strong>.</li>
@@ -3164,7 +3164,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Retrouver dans le document les tableaux de données ;</li>
 									<li>Pour chaque en-tête de ligne s’appliquant à la totalité de la ligne, vérifier que l’en-tête de ligne est structuré au moyen :</li>
 									<ul>
-									<li>Soit d’un élément <code><th></code> ;</li>
+									<li>Soit d’un élément <code>&lt;th&gt;</code> ;</li>
 									<li>Soit d’un élément pourvu d’un attribut WAI-ARIA <code>role="rowheader"</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque en-tête de ligne s’appliquant à la totalité de la ligne, <strong>le test est validé</strong>.</li>
@@ -3178,7 +3178,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<div class="methodology-content">
 									<ol>
 									<li>Retrouver dans le document les tableaux de données ;</li>
-									<li>Pour chaque en-tête ne s’appliquant pas à la totalité de la ligne ou de la colonne, vérifier que l’en-tête de ligne est structuré au moyen d’un élément <code><th></code> ;</li>
+									<li>Pour chaque en-tête ne s’appliquant pas à la totalité de la ligne ou de la colonne, vérifier que l’en-tête de ligne est structuré au moyen d’un élément <code>&lt;th&gt;</code> ;</li>
 									<li>Si c’est le cas pour chaque en-tête ne s’appliquant pas à la totalité de la ligne ou de la colonne, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -3190,7 +3190,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<div class="methodology-content">
 									<ol>
 									<li>Retrouver dans le document les tableaux de données ;</li>
-									<li>Pour chaque cellule associée à plusieurs en-têtes est-elle structurée au moyen d’une balise <code><th></code> ou <code><td></code> ;</li>
+									<li>Pour chaque cellule associée à plusieurs en-têtes est-elle structurée au moyen d’une balise <code>&lt;th&gt;</code> ou <code>&lt;td&gt;</code> ;</li>
 									<li>Si c’est le cas pour chaque en-tête ne s’appliquant pas à la totalité de la ligne ou de la colonne, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -3229,7 +3229,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<div class="methodology-content">
 									<ol>
 									<li>Retrouver dans le document les tableaux de données ;</li>
-									<li>Pour chaque en-tête (élément <code><th></code>) s’appliquant à la totalité de la ligne ou de la colonne, vérifier que l’élément <code><th></code> possède :</li>
+									<li>Pour chaque en-tête (élément <code>&lt;th&gt;</code>) s’appliquant à la totalité de la ligne ou de la colonne, vérifier que l’élément <code>&lt;th&gt;</code> possède :</li>
 									<ul>
 									<li>Soit un attribut <code>id</code> unique ;</li>
 									<li>Soit un attribut scope ;</li>
@@ -3251,7 +3251,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<div class="methodology-content">
 									<ol>
 									<li>Retrouver dans le document les tableaux de données ;</li>
-									<li>Pour chaque en-tête (élément <code><th></code>) s’appliquant à la totalité de la ligne ou de la colonne et pourvu d’un attribut <code>scope</code>, vérifier que l’attribut <code>scope</code> possède :</li>
+									<li>Pour chaque en-tête (élément <code>&lt;th&gt;</code>) s’appliquant à la totalité de la ligne ou de la colonne et pourvu d’un attribut <code>scope</code>, vérifier que l’attribut <code>scope</code> possède :</li>
 									<ul>
 									<li>Soit une valeur <code>"row"</code> pour les en-têtes de ligne ;</li>
 									<li>Soit une valeur <code>"col"</code> pour les en-têtes de colonne.</li>
@@ -3273,7 +3273,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<div class="methodology-content">
 									<ol>
 									<li>Retrouver dans le document les tableaux de données ;</li>
-									<li>Pour chaque en-tête (élément <code><th></code>) ne s’appliquant pas à la totalité de la ligne ou de la colonne, vérifier que l’élément <code><th></code> :</li>
+									<li>Pour chaque en-tête (élément <code>&lt;th&gt;</code>) ne s’appliquant pas à la totalité de la ligne ou de la colonne, vérifier que l’élément <code>&lt;th&gt;</code> :</li>
 									<ul>
 									<li>Possède un attribut <code>id</code> unique ;</li>
 									<li>Et ne possède pas d’attribut <code>scope </code>;</li>
@@ -3295,12 +3295,12 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<div class="methodology-content">
 									<ol>
 									<li>Retrouver dans le document les tableaux de données ;</li>
-									<li>Pour chaque élément <code><td></code> ou <code><th></code> associé à un ou plusieurs en-têtes possédant un attribut <code>id</code>, vérifier que :</li>
+									<li>Pour chaque élément <code>&lt;td&gt;</code> ou <code>&lt;th&gt;</code> associé à un ou plusieurs en-têtes possédant un attribut <code>id</code>, vérifier que :</li>
 									<ul>
-									<li>L’élément <code><td></code> ou <code><th></code> possède un attribut <code>headers</code> ;</li>
+									<li>L’élément <code>&lt;td&gt;</code> ou <code>&lt;th&gt;</code> possède un attribut <code>headers</code> ;</li>
 									<li>Et l’attribut <code>headers</code> possède la liste des valeurs d’attribut <code>id</code> des en-têtes associés.</li>
 									</ul>
-									<li>Si c’est le cas pour chaque élément <code><td></code> ou <code><th></code> associé à un ou plusieurs en-têtes possédant un attribut <code>id</code>, <strong>le test est validé</strong>.</li>
+									<li>Si c’est le cas pour chaque élément <code>&lt;td&gt;</code> ou <code>&lt;th&gt;</code> associé à un ou plusieurs en-têtes possédant un attribut <code>id</code>, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
 							</details>
@@ -3364,8 +3364,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Retrouver dans le document les tableaux de mise en forme ;</li>
 									<li>Pour chaque tableau de mise en forme, vérifier que :</li>
 									<ul>
-									<li>L’élément <code><table></code> ne possède pas d'attribut <code>summary</code>, d’éléments enfant <code><caption></code>, <code><thead></code>, <code><th></code>, <code><tfoot></code> ou d’éléments pourvus d’un attribut WAI-ARIA <code>role="rowheader"</code> ou <code>role="columnheader"</code> ;</li>
-									<li>Les éléments <code><td></code> ne possèdent pas d’attributs <code>scope</code>, <code>headers</code> et <code>axis</code>.</li>
+									<li>L’élément <code>&lt;table&gt;</code> ne possède pas d'attribut <code>summary</code>, d’éléments enfant <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;tfoot&gt;</code> ou d’éléments pourvus d’un attribut WAI-ARIA <code>role="rowheader"</code> ou <code>role="columnheader"</code> ;</li>
+									<li>Les éléments <code>&lt;td&gt;</code> ne possèdent pas d’attributs <code>scope</code>, <code>headers</code> et <code>axis</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque tableau de mise en forme, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -3444,7 +3444,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les liens image (lien avec pour contenu un élément <code><img></code> ou un élément ayant l’attribut WAI-ARIA <code>role="img"</code>, un élément <code><area></code> possédant un attribut <code>href</code>, un élément <code><object></code>, un élément <code><canvas></code> ou un élément <code><svg></code>) ;</li>
+									<li>Retrouver dans le document les liens image (lien avec pour contenu un élément <code>&lt;img&gt;</code> ou un élément ayant l’attribut WAI-ARIA <code>role="img"</code>, un élément <code>&lt;area&gt;</code> possédant un attribut <code>href</code>, un élément <code>&lt;object&gt;</code>, un élément <code>&lt;canvas&gt;</code> ou un élément <code>&lt;svg&gt;</code>) ;</li>
 									<li>Pour chaque lien image, vérifier que ce qui permet d’en comprendre la fonction et la destination est :</li>
 									<ul>
 									<li>Soit l’intitulé du lien seul, fourni par l’alternative textuelle de l’image ;</li>
@@ -3486,10 +3486,10 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les liens SVG (élément <code><svg></code> qui possède un élément <code><a></code> pourvu d’un attribut <code>xlink-href</code> (SVG 1.1) ou <code>href</code> (SVG 2)) ;</li>
+									<li>Retrouver dans le document les liens SVG (élément <code>&lt;svg&gt;</code> qui possède un élément <code>&lt;a&gt;</code> pourvu d’un attribut <code>xlink-href</code> (SVG 1.1) ou <code>href</code> (SVG 2)) ;</li>
 									<li>Pour chaque lien SVG, vérifier que ce qui permet d’en comprendre la fonction et la destination est :</li>
 									<ul>
-									<li>Soit l’intitulé du lien seul, fourni par le nom accessible de l’élément <code><svg></code> (résolu généralement à partir du contenu d’un élément <code><text></code>) ;</li>
+									<li>Soit l’intitulé du lien seul, fourni par le nom accessible de l’élément <code>&lt;svg&gt;</code> (résolu généralement à partir du contenu d’un élément <code>&lt;text&gt;</code>) ;</li>
 									<li>Soit le contexte du lien.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque lien SVG, <strong>le test est validé</strong>.</li>
@@ -3505,8 +3505,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Retrouver dans le document les liens autres que SVG dont le contenu est fourni à la fois par un intitulé visible et par le contenu soit d’un attribut title ou d’un attribut <code>aria-label</code> ou d’un attribut <code>aria-labelledby</code> ;</li>
 									<li>Pour chaque lien, vérifier que le contenu de l’attribut <code>title</code> ou de l’attribut <code>aria-label</code> ou de l’attribut <code>aria-labelledby</code> contient l’intitulé visible ;</li>
 									<li>Si c’est le cas pour chaque lien, <strong>le test est validé</strong> pour les liens autres que SVG.</li>
-									<li>Retrouver dans le document les liens SVG dont le contenu est fourni à la fois par un intitulé visible et par le contenu soit d’un attribut <code>aria-labelledby</code>, ou d’un attribut <code>aria-label</code> ou d’un élément title (enfant direct de l’élément <code><svg></code>) ou d’un attribut x-link:title (SVG 1.1) ou d’un ou plusieurs éléments <code><text></code>;</li>
-									<li>Pour chaque lien SVG, vérifier que le contenu de l’attribut <code>aria-labelledby</code> ou de l’attribut <code>aria-label</code> ou de l’élément <code><title></code> ou de l’attribut <code>x-link:title</code> ou d’un ou plusieurs éléments <code><text></code> contient l’intitulé visible ;</li>
+									<li>Retrouver dans le document les liens SVG dont le contenu est fourni à la fois par un intitulé visible et par le contenu soit d’un attribut <code>aria-labelledby</code>, ou d’un attribut <code>aria-label</code> ou d’un élément title (enfant direct de l’élément <code>&lt;svg&gt;</code>) ou d’un attribut x-link:title (SVG 1.1) ou d’un ou plusieurs éléments <code>&lt;text&gt;</code>;</li>
+									<li>Pour chaque lien SVG, vérifier que le contenu de l’attribut <code>aria-labelledby</code> ou de l’attribut <code>aria-label</code> ou de l’élément <code>&lt;title&gt;</code> ou de l’attribut <code>x-link:title</code> ou d’un ou plusieurs éléments <code>&lt;text&gt;</code> contient l’intitulé visible ;</li>
 									<li>Si c’est le cas pour chaque lien SVG, <strong>le test est validé</strong> pour les liens SVG.</li>
 									<li>Si le test est validé à la fois pour les liens non SVG et pour les liens SVG, le test est globalement validé.</li>
 									</ol>
@@ -3568,7 +3568,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<div class="methodology-content">
 									<ol>
 									<li>Retrouver dans le document les liens quels qu’ils soient ;</li>
-									<li>Pour chaque lien, vérifier que le contenu de l’élément <code><a></code> (ou d’un élément pourvu d’un attribut WAI-ARIA <code>role=link</code>) contient un intitulé (texte ou alternative) ;</li>
+									<li>Pour chaque lien, vérifier que le contenu de l’élément <code>&lt;a&gt;</code> (ou d’un élément pourvu d’un attribut WAI-ARIA <code>role=link</code>) contient un intitulé (texte ou alternative) ;</li>
 									<li>Si c’est le cas pour chaque lien, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -3860,7 +3860,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Retrouver dans le document tous les événements JavaScript qui initient un changement de contexte, par exemple :</li>
 									<ul>
 									<li>Une mise à jour dynamique de champs de formulaire ;</li>
-									<li>L’ouverture d’une nouvelle page à l’activation d’une option d’une liste de sélection (élément <code><select></code>) ;</li>
+									<li>L’ouverture d’une nouvelle page à l’activation d’une option d’une liste de sélection (élément <code>&lt;select&gt;</code>) ;</li>
 									<li>La mise à jour, via un procédé AJAX d’une partie essentielle de la page ;</li>
 									<li>Le lancement automatique d’un lecteur vidéo suite à la sélection d’une playlist ;</li>
 									<li>La manipulation du focus ayant pour résultat de modifier la position courante de l’utilisateur dans la page.</li>
@@ -4003,10 +4003,10 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document la balise DOCTYPE (par exemple <code><!DOCTYPE html></code>) ;</li>
+									<li>Retrouver dans le document la balise DOCTYPE (par exemple <code>&lt;!DOCTYPE html&gt;</code>) ;</li>
 									<li>Vérifier que :</li>
 									<ul>
-									<li>La balise DOCTYPE est placée avant la balise <code><html></code> ;</li>
+									<li>La balise DOCTYPE est placée avant la balise <code>&lt;html&gt;</code> ;</li>
 									<li>Le type de document est valide.</li>
 									</ul>
 									<li>Si c’est le cas, <strong>le test est validé</strong>.</li>
@@ -4184,7 +4184,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<div class="methodology-content">
 									<p>Test 8.5.1</p>
 									<ol>
-									<li>Retrouver dans le document le titre structuré au moyen d’un élément <code><title></code> ;</li>
+									<li>Retrouver dans le document le titre structuré au moyen d’un élément <code>&lt;title&gt;</code> ;</li>
 									<li>Si c’est le cas, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -4214,8 +4214,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document le titre structuré au moyen d’un élément <code><title></code> ;</li>
-									<li>Vérifier si le contenu de l’élément <code><title></code> est suffisamment pertinent (il permet de retrouver la page dans l’historique de navigation ou la liste des onglets).</li>
+									<li>Retrouver dans le document le titre structuré au moyen d’un élément <code>&lt;title&gt;</code> ;</li>
+									<li>Vérifier si le contenu de l’élément <code>&lt;title&gt;</code> est suffisamment pertinent (il permet de retrouver la page dans l’historique de navigation ou la liste des onglets).</li>
 									<li>Si c’est le cas, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -4344,8 +4344,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									</ul>
 									<li>Si c’est le cas, <strong>le test est validé</strong>.</li>
 									</ol>
-									<p>Note : Quelques exemples, non exhaustifs de détournement de balisage : un élément <code><div></code> utilisé comme paragraphe, un titre utilisé comme légende, un élément <code><blockquote></code> ou des paragraphes vides ou encore des espaces utilisés pour créer des effets de marges.</p>
-									<p>L'utilisation d'un <code>role="presentation"</code> est formellement déconseillée, mais peut toutefois se justifier dans de rares cas. Cela peut être acceptable sur un élément <code><blockquote></code> ou un paragraphe vide, mais sera considéré comme non-conforme sur un titre.</p>
+									<p>Note : Quelques exemples, non exhaustifs de détournement de balisage : un élément <code>&lt;div&gt;</code> utilisé comme paragraphe, un titre utilisé comme légende, un élément <code>&lt;blockquote&gt;</code> ou des paragraphes vides ou encore des espaces utilisés pour créer des effets de marges.</p>
+									<p>L'utilisation d'un <code>role="presentation"</code> est formellement déconseillée, mais peut toutefois se justifier dans de rares cas. Cela peut être acceptable sur un élément <code>&lt;blockquote&gt;</code> ou un paragraphe vide, mais sera considéré comme non-conforme sur un titre.</p>
 									<p>Le cas des tableaux : à noter que ce test aborde les tableaux de présentation qui ne devraient finalement pas apparaître au sein de la thématique Tableaux.</p>
 								</div>
 							</details>
@@ -4449,7 +4449,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les titres (balise <code><hx></code> ou balise possédant un attribut WAI-ARIA <code>role="heading"</code> associé à un attribut WAI-ARIA <code>aria-level</code>) ;</li>
+									<li>Retrouver dans le document les titres (balise <code>&lt;hx&gt;</code> ou balise possédant un attribut WAI-ARIA <code>role="heading"</code> associé à un attribut WAI-ARIA <code>aria-level</code>) ;</li>
 									<li>Vérifier que la hiérarchie entre les titres est pertinente ;</li>
 									<li>Si c’est le cas, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -4474,7 +4474,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<ol>
 									<li>Pour chaque titre identifié au test 9.1.1, vérifier que :</li>
 									<ul>
-									<li>Soit il est structuré au moyen d’une balise <code><hx></code> (“x” désignant une valeur numérique comprise entre 1 et 6);</li>
+									<li>Soit il est structuré au moyen d’une balise <code>&lt;hx&gt;</code> (“x” désignant une valeur numérique comprise entre 1 et 6);</li>
 									<li>Soit il est structuré au moyen d’une balise possédant un attribut WAI-ARIA <code>role="heading"</code> et un attribut WAI-ARIA <code>aria-level=x</code> (“x” désignant une valeur numérique).</li>
 									</ul>
 									<li>Si c’est le cas pour chaque titre, <strong>le test est validé</strong>.</li>
@@ -4521,12 +4521,12 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Vérifier que la zone d’en-tête est structurée au moyen d’un élément <code><header></code> ;</li>
-									<li>Vérifier que les zones de navigation principales et secondaires sont structurées au moyen d’un élément <code><nav></code> ;</li>
-									<li>Vérifier que l’élément <code><nav></code> n’est pas utilisé en dehors de la structuration des zones de navigation principales et secondaires ;</li>
-									<li>Vérifier que la zone de contenu principal est structurée au moyen d’un élément <code><main></code> ;</li>
-									<li>Si le document possède plusieurs éléments <code><main></code>, vérifier qu’un seul de ces éléments est visible (les autres occurrences de l’élément sont pourvues d’un attribut <code>hidden</code>) ;</li>
-									<li>Vérifier que la zone de pied de page est structurée au moyen d’un élément <code><footer></code>.</li>
+									<li>Vérifier que la zone d’en-tête est structurée au moyen d’un élément <code>&lt;header&gt;</code> ;</li>
+									<li>Vérifier que les zones de navigation principales et secondaires sont structurées au moyen d’un élément <code>&lt;nav&gt;</code> ;</li>
+									<li>Vérifier que l’élément <code>&lt;nav&gt;</code> n’est pas utilisé en dehors de la structuration des zones de navigation principales et secondaires ;</li>
+									<li>Vérifier que la zone de contenu principal est structurée au moyen d’un élément <code>&lt;main&gt;</code> ;</li>
+									<li>Si le document possède plusieurs éléments <code>&lt;main&gt;</code>, vérifier qu’un seul de ces éléments est visible (les autres occurrences de l’élément sont pourvues d’un attribut <code>hidden</code>) ;</li>
+									<li>Vérifier que la zone de pied de page est structurée au moyen d’un élément <code>&lt;footer&gt;</code>.</li>
 									<li>Si c’est le cas pour chaque zone de contenu, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -4570,7 +4570,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Retrouver dans le document les éléments regroupés visuellement sous la forme d’une liste non ordonnée ;</li>
 									<li>Pour chaque liste, vérifier que la liste est structurée :</li>
 									<ul>
-									<li>Soit au moyen des éléments <code><ul></code> et <code><li></code> ;</li>
+									<li>Soit au moyen des éléments <code>&lt;ul&gt;</code> et <code>&lt;li&gt;</code> ;</li>
 									<li>Soit au moyen d’éléments pourvus d’attributs WAI-ARIA <code>role="list"</code> et <code>role="listitem"</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque liste non ordonnée, <strong>le test est validé</strong>.</li>
@@ -4591,7 +4591,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Retrouver dans le document les éléments regroupés visuellement sous la forme d’une liste ordonnée ;</li>
 									<li>Pour chaque liste, vérifier que la liste est structurée :</li>
 									<ul>
-									<li>Soit au moyen des éléments <code><ol></code> et <code><li></code> ;</li>
+									<li>Soit au moyen des éléments <code>&lt;ol&gt;</code> et <code>&lt;li&gt;</code> ;</li>
 									<li>Soit au moyen d’éléments pourvus d’attributs WAI-ARIA <code>role="list"</code> et <code>role="listitem"</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque liste ordonnée, <strong>le test est validé</strong>.</li>
@@ -4605,7 +4605,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<div class="methodology-content">
 									<ol>
 									<li>Retrouver dans le document les éléments regroupés visuellement sous la forme d’une liste de description ;</li>
-									<li>Pour chaque liste, vérifier que la liste est structurée au moyen des éléments <code><dl></code>, <code><dt></code> et <code><dd></code> ;</li>
+									<li>Pour chaque liste, vérifier que la liste est structurée au moyen des éléments <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code> et <code>&lt;dd&gt;</code> ;</li>
 									<li>Si c’est le cas pour chaque liste de description, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -4641,7 +4641,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<div class="methodology-content">
 									<ol>
 									<li>Retrouver dans le document les citations courtes (ou en ligne) ;</li>
-									<li>Pour chaque citation, vérifier que la citation est structurée au moyen d’un élément <code><q></code> ;</li>
+									<li>Pour chaque citation, vérifier que la citation est structurée au moyen d’un élément <code>&lt;q&gt;</code> ;</li>
 									<li>Si c’est le cas pour chaque citation courte, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -4653,7 +4653,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<div class="methodology-content">
 									<ol>
 									<li>Retrouver dans le document les blocs de citation ;</li>
-									<li>Pour chaque bloc de citation, vérifier que le bloc de citation est structuré au moyen d’un élément <code><blockquote></code> ;</li>
+									<li>Pour chaque bloc de citation, vérifier que le bloc de citation est structuré au moyen d’un élément <code>&lt;blockquote&gt;</code> ;</li>
 									<li>Si c’est le cas pour chaque bloc de citation, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -4717,8 +4717,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Vérifier l’absence des éléments de présentation <code><basefont></code>, <code><big></code>, <code><blink></code>, <code><center></code>, <code><font></code>, <code><marquee></code>, <code><s></code>, <code><strike></code>, <code><tt></code> ;</li>
-									<li>Vérifier l’absence de l’élément <code><u></code> uniquement si le DOCTYPE du document ne correspond pas à HTML 5 ;</li>
+									<li>Vérifier l’absence des éléments de présentation <code>&lt;basefont&gt;</code>, <code>&lt;big&gt;</code>, <code>&lt;blink&gt;</code>, <code>&lt;center&gt;</code>, <code>&lt;font&gt;</code>, <code>&lt;marquee&gt;</code>, <code>&lt;s&gt;</code>, <code>&lt;strike&gt;</code>, <code>&lt;tt&gt;</code> ;</li>
+									<li>Vérifier l’absence de l’élément <code>&lt;u&gt;</code> uniquement si le DOCTYPE du document ne correspond pas à HTML 5 ;</li>
 									<li>Si c’est le cas, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -4729,7 +4729,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Vérifier l’absence des attributs de présentation : <code>align</code>, <code>alink</code>, <code>background</code>, <code>bgcolor</code>, <code>border</code>, <code>cellpadding</code>, <code>cellspacing</code>, <code>char</code>, <code>charoff</code>, <code>clear</code>, <code>color</code>, <code>compact</code>, <code>frameborder</code>, <code>hspace</code>, <code>link</code>, <code>marginheight</code>, <code>marginwidth</code>, <code>text</code>, <code>valign</code>, <code>vlink</code>, <code>vspace</code>, <code>size</code>(exception faite de l'élément <code><select></code>), <code>width</code> (exception faite des éléments <code><img></code>, <code><object></code>, <code><embed></code>, <code><canvas></code> et <code><svg></code>), <code>height</code> (exception faite des éléments <code><img></code>, <code><object></code>, <code><embed></code>, <code><canvas></code> et <code><svg></code>) ;</li>
+									<li>Vérifier l’absence des attributs de présentation : <code>align</code>, <code>alink</code>, <code>background</code>, <code>bgcolor</code>, <code>border</code>, <code>cellpadding</code>, <code>cellspacing</code>, <code>char</code>, <code>charoff</code>, <code>clear</code>, <code>color</code>, <code>compact</code>, <code>frameborder</code>, <code>hspace</code>, <code>link</code>, <code>marginheight</code>, <code>marginwidth</code>, <code>text</code>, <code>valign</code>, <code>vlink</code>, <code>vspace</code>, <code>size</code>(exception faite de l'élément <code>&lt;select&gt;</code>), <code>width</code> (exception faite des éléments <code>&lt;img&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;canvas&gt;</code> et <code>&lt;svg&gt;</code>), <code>height</code> (exception faite des éléments <code>&lt;img&gt;</code>, <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;canvas&gt;</code> et <code>&lt;svg&gt;</code>) ;</li>
 									<li>Si c’est le cas, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -4974,7 +4974,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les éléments de type lien (élément <code><a></code> ou élément pourvu d’un attribut WAI-ARIA <code>role="link"</code>) ;</li>
+									<li>Retrouver dans le document les éléments de type lien (élément <code>&lt;a&gt;</code> ou élément pourvu d’un attribut WAI-ARIA <code>role="link"</code>) ;</li>
 									<li>Pour chaque élément de type lien, s’il peut être confondu avec un texte normal lorsqu’il est signalé uniquement par la couleur, vérifier que le contraste entre la couleur de police du lien et la couleur de police du texte environnant est de 3:1, au moins ;</li>
 									<li>Cette vérification doit être faite pour les différents états du lien s’ils sont présentés au moyen d’une couleur différente : l’état non visité, l’état visité, l’état activé, l’état au survol et l’état à la prise de focus ;</li>
 									<li>Si c’est le cas pour chaque élément de type lien, <strong>le test est validé</strong>.</li>
@@ -5294,7 +5294,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Modifier les styles du document en donnant :</li>
 									<ul>
 									<li>Une valeur de 1.5 à la propriété <code>line-height</code> de tous les éléments du document ;</li>
-									<li>Une valeur de 2em à la propriété <code>margin-bottom</code> des éléments <code><p></code> ;</li>
+									<li>Une valeur de 2em à la propriété <code>margin-bottom</code> des éléments <code>&lt;p&gt;</code> ;</li>
 									<li>Une valeur de 0.12em à la propriété <code>letter-spacing</code> de tous les éléments du document ;</li>
 									<li>Une valeur de 0.16em à la propriété <code>word-spacing</code> de tous les éléments du document ;</li>
 									</ul>
@@ -5302,7 +5302,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<ul>
 									<li>Des sous-titres directement intégrés à une vidéo ;</li>
 									<li>Des images texte ;</li>
-									<li>Des textes au sein d’une balise <code><canvas></code>.</li>
+									<li>Des textes au sein d’une balise <code>&lt;canvas&gt;</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque passage de texte, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -5541,9 +5541,9 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<ul>
 									<li>Possède un attribut WAI-ARIA <code>aria-labelledby</code> référençant un passage de texte identifié ;</li>
 									<li>Possède un attribut WAI-ARIA <code>aria-label</code> ;</li>
-									<li>Est associé à un élément <code><label></code> ayant un attribut <code>for</code> ;</li>
+									<li>Est associé à un élément <code>&lt;label&gt;</code> ayant un attribut <code>for</code> ;</li>
 									<li>Possède un attribut <code>title</code> ;</li>
-									<li>Un bouton adjacent au champ de formulaire lui fournit une étiquette visible et un élément <code><label></code> visuellement caché ou un attribut WAI-ARIA <code>aria-label</code>, <code>aria-labelledby</code> ou <code>title</code> lui fournit un nom accessible.</li>
+									<li>Un bouton adjacent au champ de formulaire lui fournit une étiquette visible et un élément <code>&lt;label&gt;</code> visuellement caché ou un attribut WAI-ARIA <code>aria-label</code>, <code>aria-labelledby</code> ou <code>title</code> lui fournit un nom accessible.</li>
 									</ul>
 									<li>Si c’est le cas pour champ de formulaire, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -5560,11 +5560,11 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les champs de formulaire associé à un élément <code><label></code> ;</li>
+									<li>Retrouver dans le document les champs de formulaire associé à un élément <code>&lt;label&gt;</code> ;</li>
 									<li>Pour chaque champ de formulaire, vérifier que :</li>
 									<ul>
 									<li>Le champ de formulaire possède un attribut <code>id</code> ;</li>
-									<li>La valeur de l’attribut <code>for</code> de l’élément <code><label></code> est égale à la valeur de l’attribut <code>id</code>.</li>
+									<li>La valeur de l’attribut <code>for</code> de l’élément <code>&lt;label&gt;</code> est égale à la valeur de l’attribut <code>id</code>.</li>
 									</ul>
 									<li>Si c’est le cas pour champ de formulaire, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -5621,7 +5621,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les champs de formulaire dont l’étiquette est fournie par un élément <code><label></code> ;</li>
+									<li>Retrouver dans le document les champs de formulaire dont l’étiquette est fournie par un élément <code>&lt;label&gt;</code> ;</li>
 									<li>Pour chaque champ de formulaire, vérifier que le contenu de l’élément est pertinent ;</li>
 									<li>Si c’est le cas pour chaque champ de formulaire, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -5677,8 +5677,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les champs de formulaire dont l’étiquette est fournie à la fois par un intitulé visible et par le contenu soit d’un élément <code><label></code>, soit d’un attribut <code>title</code> ou d’un attribut <code>aria-label</code> ou d’un attribut <code>aria-labelledby</code> ;</li>
-									<li>Pour chaque champ de formulaire, vérifier que le contenu de l’élément <code><label></code> ou de l’attribut <code>title</code> ou de l’attribut <code>aria-label</code> ou de l’attribut <code>aria-labelledby</code> contient l’intitulé visible ;</li>
+									<li>Retrouver dans le document les champs de formulaire dont l’étiquette est fournie à la fois par un intitulé visible et par le contenu soit d’un élément <code>&lt;label&gt;</code>, soit d’un attribut <code>title</code> ou d’un attribut <code>aria-label</code> ou d’un attribut <code>aria-labelledby</code> ;</li>
+									<li>Pour chaque champ de formulaire, vérifier que le contenu de l’élément <code>&lt;label&gt;</code> ou de l’attribut <code>title</code> ou de l’attribut <code>aria-label</code> ou de l’attribut <code>aria-labelledby</code> contient l’intitulé visible ;</li>
 									<li>Si c’est le cas pour chaque champ de formulaire, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -5791,7 +5791,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les champs de formulaire qui ne sont pas des éléments <code><input></code> de type <code>checkbox</code> ou de type <code>radio</code> ou des éléments ayant un attribut WAI-ARIA <code>role="checkbox"</code>, <code>role="radio"</code> ou <code>role="switch</code>";</li>
+									<li>Retrouver dans le document les champs de formulaire qui ne sont pas des éléments <code>&lt;input&gt;</code> de type <code>checkbox</code> ou de type <code>radio</code> ou des éléments ayant un attribut WAI-ARIA <code>role="checkbox"</code>, <code>role="radio"</code> ou <code>role="switch</code>";</li>
 									<li>Pour chaque champ de formulaire, vérifier que l’étiquette est visuellement accolée :</li>
 									<ul>
 									<li>Immédiatement au-dessus ou à gauche du champ de formulaire lorsque le sens de lecture de la langue de l’étiquette est de gauche à droite ;</li>
@@ -5812,7 +5812,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les champs de formulaire qui sont <code><input></code> de type <code>checkbox</code> ou de type <code>radio</code> ou des éléments ayant un attribut WAI-ARIA <code>role="checkbox"</code>, <code>role="radio"</code> ou <code>role="switch</code>";</li>
+									<li>Retrouver dans le document les champs de formulaire qui sont <code>&lt;input&gt;</code> de type <code>checkbox</code> ou de type <code>radio</code> ou des éléments ayant un attribut WAI-ARIA <code>role="checkbox"</code>, <code>role="radio"</code> ou <code>role="switch</code>";</li>
 									<li>Pour chaque champ de formulaire, vérifier que l’étiquette est visuellement accolée :</li>
 									<ul>
 									<li>Immédiatement au-dessous ou à droite du champ de formulaire lorsque le sens de lecture de la langue de l’étiquette est de gauche à droite ;</li>
@@ -5865,9 +5865,9 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Retrouver dans le document les champs de formulaire de même nature (par exemple un groupe de saisie d’informations d’identité, une série de cases à cocher, une saisie de date sur plusieurs champs successifs…) ;</li>
 									<li>Pour chaque groupe de champs de formulaire de même nature, vérifier que ces champs de même nature sont regroupés :</li>
 									<ul>
-									<li>Soit dans un élément <code><fieldset></code> ;</li>
+									<li>Soit dans un élément <code>&lt;fieldset&gt;</code> ;</li>
 									<li>Soit dans un élément possédant un attribut WAI-ARIA <code>role="group"</code> ;</li>
-									<li>Soit dans un élément possédant un attribut WAI-ARIA <code>role="radiogroup"</code> ou <code>"group"</code>, s’il s’agit d’éléments <code><input></code> de type <code>radio</code> ( ou d’éléments possédant un attribut WAI-ARIA <code>role="radio"</code>).</li>
+									<li>Soit dans un élément possédant un attribut WAI-ARIA <code>role="radiogroup"</code> ou <code>"group"</code>, s’il s’agit d’éléments <code>&lt;input&gt;</code> de type <code>radio</code> ( ou d’éléments possédant un attribut WAI-ARIA <code>role="radio"</code>).</li>
 									</ul>
 									<li>Si c’est le cas pour chaque groupe de champs de formulaire de même nature, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -5902,7 +5902,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Retrouver dans le document les groupes de champs de formulaire de même nature ;</li>
 									<li>Pour chaque groupe de champs de formulaire de même nature, vérifier que :</li>
 									<ul>
-									<li>Si le regroupement utilise un élément <code><fieldset></code>, l’élément <code><fieldset></code> possède un élément <code><legend></code> ;</li>
+									<li>Si le regroupement utilise un élément <code>&lt;fieldset&gt;</code>, l’élément <code>&lt;fieldset&gt;</code> possède un élément <code>&lt;legend&gt;</code> ;</li>
 									<li>Si l’élément de regroupement utilise un attribut WAI-ARIA <code>role="group"</code> ou <code>"radiogroup"</code>, il possède un attribut WAI-ARIA <code>aria-label</code> ou <code>aria-labelledby</code>.</li>
 									</ul>
 									<li>Sinon, pour chacun des champs de même nature, vérifier la présence :</li>
@@ -5974,8 +5974,8 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les listes de sélection (élément <code><select></code>) ;</li>
-									<li>Pour chaque liste de sélection proposant des groupes d’items de même nature, vérifier que ces items sont regroupés au moyen d’éléments <code><optgroup></code> ;</li>
+									<li>Retrouver dans le document les listes de sélection (élément <code>&lt;select&gt;</code>) ;</li>
+									<li>Pour chaque liste de sélection proposant des groupes d’items de même nature, vérifier que ces items sont regroupés au moyen d’éléments <code>&lt;optgroup&gt;</code> ;</li>
 									<li>Si c’est le cas pour chaque liste de sélection proposant des groupes d’items de même nature, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
@@ -5986,9 +5986,9 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les listes de sélection (élément <code><select></code>) qui possèdent des éléments <code><optgroup></code> ;</li>
-									<li>Pour chaque élément <code><optgroup></code>, vérifier qu’il possède un attribut <code>label</code> ;</li>
-									<li>Si c’est le cas pour chaque élément <code><optgroup></code>, <strong>le test est validé</strong>.</li>
+									<li>Retrouver dans le document les listes de sélection (élément <code>&lt;select&gt;</code>) qui possèdent des éléments <code>&lt;optgroup&gt;</code> ;</li>
+									<li>Pour chaque élément <code>&lt;optgroup&gt;</code>, vérifier qu’il possède un attribut <code>label</code> ;</li>
+									<li>Si c’est le cas pour chaque élément <code>&lt;optgroup&gt;</code>, <strong>le test est validé</strong>.</li>
 									</ol>
 								</div>
 							</details>
@@ -5998,7 +5998,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les listes de sélection (élément <code><select></code>) qui possèdent des éléments <code><optgroup></code> pourvus d’un attribut <code>label</code> ;</li>
+									<li>Retrouver dans le document les listes de sélection (élément <code>&lt;select&gt;</code>) qui possèdent des éléments <code>&lt;optgroup&gt;</code> pourvus d’un attribut <code>label</code> ;</li>
 									<li>Pour chaque attribut <code>label</code>, vérifier que son contenu est pertinent ;</li>
 									<li>Si c’est le cas pour chaque attribut <code>label</code>, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -6231,7 +6231,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Retrouver dans le document les champs de formulaire qui possèdent un attribut <code>aria-invalid="true"</code> ;</li>
 									<li>Pour chaque champ de formulaire, vérifier que :</li>
 									<ul>
-									<li>Soit une instruction ou une indication du type de données et/ou de format obligatoire est visible et située dans l’élément <code><label></code> associé au champ ;</li>
+									<li>Soit une instruction ou une indication du type de données et/ou de format obligatoire est visible et située dans l’élément <code>&lt;label&gt;</code> associé au champ ;</li>
 									<li>Soit une instruction ou une indication du type de données et/ou de format obligatoire est visible et située dans le passage de texte associé au champ.</li>
 									</ul>
 									<li>Si c’est le cas pour chaque champ de formulaire qui possède un attribut <code>aria-invalid="true"</code>, <strong>le test est validé</strong>.</li>
@@ -7042,7 +7042,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les rafraîchissements initiés dans le contenu par un élément <code><object></code>, <code><embed></code>, <code><svg></code>, <code><canvas></code> ou par un élément <code><meta http-equiv="refresh" content="[compteur]"></code> (dans l’élément <code><head></code> de la page) ;</li>
+									<li>Retrouver dans le document les rafraîchissements initiés dans le contenu par un élément <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;svg&gt;</code>, <code>&lt;canvas&gt;</code> ou par un élément <code>&lt;meta http-equiv="refresh" content="[compteur]"&gt;</code> (dans l’élément <code>&lt;head&gt;</code> de la page) ;</li>
 									<li>Pour chaque rafraîchissement, vérifier que :</li>
 									<ul>
 									<li>Soit la présence d’un mécanisme permet à l’utilisateur de stopper et de relancer le rafraîchissement ;</li>
@@ -7060,7 +7060,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document une redirection automatique initiée par un élément <code><meta http-equiv="refresh" content="0;URL='[URL ciblée]'" /></code> ;</li>
+									<li>Retrouver dans le document une redirection automatique initiée par un élément <code>&lt;meta http-equiv="refresh" content="0;URL='[URL ciblée]'" /&gt;</code> ;</li>
 									<li>Vérifier que la redirection est immédiate ;</li>
 									<li>Si c’est le cas, <strong>le test est validé</strong>.</li>
 									</ol>
@@ -7285,7 +7285,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 									<li>Retrouver dans le document les contenus cryptiques (art ASCII, émoticône, syntaxe cryptique) ;</li>
 									<li>Pour chaque contenu cryptique, vérifier que :</li>
 									<ul>
-									<li>Soit une définition est disponible au moyen d’un attribut <code>title</code>, sur un lien, un contrôle de formulaire, une abréviation (élément <code><abbr></code>) par exemple ;</li>
+									<li>Soit une définition est disponible au moyen d’un attribut <code>title</code>, sur un lien, un contrôle de formulaire, une abréviation (élément <code>&lt;abbr&gt;</code>) par exemple ;</li>
 									<li>Soit une définition est donnée dans le contexte adjacent (immédiatement avant ou après).</li>
 									</ul>
 									<li>Si c’est le cas pour chaque contenu cryptique, <strong>le test est validé</strong>.</li>
@@ -7358,7 +7358,7 @@ Fork : https://github.com/Tanaguru/Rgaa_Website
 								<summary>Méthodologie de test</summary>
 								<div class="methodology-content">
 									<ol>
-									<li>Retrouver dans le document les contenus clignotants ou qui provoquent des effets de flash de type image animée, vidéo (cf. note) ou animation (éléments <code><img></code>, <code><svg></code>, <code><canvas></code>, <code><embed></code>, <code><object></code> ou <code><video></code>) ;</li>
+									<li>Retrouver dans le document les contenus clignotants ou qui provoquent des effets de flash de type image animée, vidéo (cf. note) ou animation (éléments <code>&lt;img&gt;</code>, <code>&lt;svg&gt;</code>, <code>&lt;canvas&gt;</code>, <code>&lt;embed&gt;</code>, <code>&lt;object&gt;</code> ou <code>&lt;video&gt;</code>) ;</li>
 									<li>Pour chaque contenu clignotant ou provoquant des effets de flash, vérifier que :</li>
 									<ul>
 									<li>Soit la fréquence de l’effet est inférieur à 3 par seconde ;</li>
