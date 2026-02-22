@@ -133,14 +133,29 @@ function searchCriteria(query, version = 'rgaa41', level = null) {
 	const versionData = data.versions[version];
 	if (!versionData) return { error: `Unknown version: ${version}. Available: ${Object.keys(data.versions).join(', ')}` };
 
-	// 1. Direct search in criteria titles/themes
+	// 1. Search in criteria titles/themes AND in test descriptions/methodologies
 	const directResults = new Set();
-	let results = versionData.criteria.filter(c => {
-		const text = `${c.title} ${c.number} ${c.theme}`;
-		const match = frenchMatch(text, query);
-		if (match) directResults.add(c.number);
-		return match;
-	});
+	let results = [];
+	for (const c of versionData.criteria) {
+		const criterionText = `${c.title} ${c.number} ${c.theme}`;
+		const criterionMatch = frenchMatch(criterionText, query);
+
+		// Search in tests (description + methodology)
+		const matchingTests = c.tests.filter(t => {
+			const testText = `${t.description || ''} ${t.methodology || ''}`;
+			return frenchMatch(testText, query);
+		});
+
+		if (criterionMatch || matchingTests.length > 0) {
+			directResults.add(c.number);
+			results.push({
+				...c,
+				_matchingTests: matchingTests.length > 0 && !criterionMatch
+					? matchingTests.map(t => t.number)
+					: undefined,
+			});
+		}
+	}
 
 	// 2. Also search glossary: find matching terms and their linked criteria
 	const matchingGlossaryTerms = versionData.glossary.filter(t => {
@@ -189,6 +204,7 @@ function searchCriteria(query, version = 'rgaa41', level = null) {
 			title: c.title,
 			theme: c.theme,
 			testCount: c.tests.length,
+			matchingTests: c._matchingTests,
 		})),
 		criteriaViaGlossary: glossaryCriteria.length > 0 ? glossaryCriteria : undefined,
 		matchingGlossaryTerms: matchingGlossaryTerms.length > 0
@@ -308,7 +324,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 	tools: [
 		{
 			name: 'search_criteria',
-			description: 'Search RGAA accessibility criteria by keyword. Also automatically searches the glossary and returns additional criteria linked via glossary terms (e.g. searching "contraste" finds criteria referencing the glossary term "Contraste"). Supports French variants (accent-insensitive, inflections). Returns criteria, criteria found via glossary, and matching glossary terms.',
+			description: 'Search RGAA accessibility criteria by keyword. Searches in criterion titles, themes, AND in test descriptions/methodologies. Also automatically searches the glossary and returns additional criteria linked via glossary terms. Supports French variants (accent-insensitive, inflections). Returns criteria (with matchingTests when found via tests only), criteria found via glossary, and matching glossary terms.',
 			inputSchema: {
 				type: 'object',
 				properties: {
