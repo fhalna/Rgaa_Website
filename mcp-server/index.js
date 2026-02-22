@@ -133,19 +133,56 @@ function searchCriteria(query, version = 'rgaa41', level = null) {
 	const versionData = data.versions[version];
 	if (!versionData) return { error: `Unknown version: ${version}. Available: ${Object.keys(data.versions).join(', ')}` };
 
+	// 1. Direct search in criteria titles/themes
+	const directResults = new Set();
 	let results = versionData.criteria.filter(c => {
 		const text = `${c.title} ${c.number} ${c.theme}`;
-		return frenchMatch(text, query);
+		const match = frenchMatch(text, query);
+		if (match) directResults.add(c.number);
+		return match;
+	});
+
+	// 2. Also search glossary: find matching terms and their linked criteria
+	const matchingGlossaryTerms = versionData.glossary.filter(t => {
+		return frenchMatch(t.term, query) || frenchMatch(t.definition, query);
+	});
+
+	// Collect criteria found via glossary (not already in direct results)
+	const glossaryCriteriaMap = {};
+	for (const term of matchingGlossaryTerms) {
+		for (const lc of (term.linkedCriteria || [])) {
+			if (!directResults.has(lc.number)) {
+				if (!glossaryCriteriaMap[lc.number]) {
+					glossaryCriteriaMap[lc.number] = { criterion: lc, viaTerms: [] };
+				}
+				glossaryCriteriaMap[lc.number].viaTerms.push(term.term);
+			}
+		}
+	}
+
+	// Add glossary-linked criteria to results
+	const glossaryCriteria = Object.values(glossaryCriteriaMap).map(({ criterion, viaTerms }) => {
+		const fullCriterion = versionData.criteria.find(c => c.number === criterion.number);
+		return {
+			number: criterion.number,
+			level: criterion.level,
+			title: fullCriterion ? fullCriterion.title : criterion.title,
+			theme: fullCriterion ? fullCriterion.theme : '',
+			testCount: fullCriterion ? fullCriterion.tests.length : criterion.tests.length,
+			foundViaGlossary: [...new Set(viaTerms)],
+		};
 	});
 
 	if (level) {
 		results = results.filter(c => c.level === level.toUpperCase());
+		glossaryCriteria.splice(0, glossaryCriteria.length,
+			...glossaryCriteria.filter(c => c.level === level.toUpperCase()));
 	}
 
 	return {
 		version: versionData.label,
 		query,
-		resultCount: results.length,
+		resultCount: results.length + glossaryCriteria.length,
 		criteria: results.map(c => ({
 			number: c.number,
 			level: c.level,
@@ -153,6 +190,13 @@ function searchCriteria(query, version = 'rgaa41', level = null) {
 			theme: c.theme,
 			testCount: c.tests.length,
 		})),
+		criteriaViaGlossary: glossaryCriteria.length > 0 ? glossaryCriteria : undefined,
+		matchingGlossaryTerms: matchingGlossaryTerms.length > 0
+			? matchingGlossaryTerms.map(t => ({
+				term: t.term,
+				linkedCriteriaCount: (t.linkedCriteria || []).length,
+			}))
+			: undefined,
 	};
 }
 
@@ -264,7 +308,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 	tools: [
 		{
 			name: 'search_criteria',
-			description: 'Search RGAA accessibility criteria by keyword. Supports French variants (accent-insensitive, handles inflections: "contraste" also matches "contrasté", "contrastées", "contraster"). Returns matching criteria with their level, theme, and test count.',
+			description: 'Search RGAA accessibility criteria by keyword. Also automatically searches the glossary and returns additional criteria linked via glossary terms (e.g. searching "contraste" finds criteria referencing the glossary term "Contraste"). Supports French variants (accent-insensitive, inflections). Returns criteria, criteria found via glossary, and matching glossary terms.',
 			inputSchema: {
 				type: 'object',
 				properties: {
@@ -311,7 +355,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
 		},
 		{
 			name: 'search_glossary',
-			description: 'Search the RGAA glossary for accessibility terms and definitions. Supports French variants (accent-insensitive, handles inflections: "contraste" also matches "contrasté", "contrastées", "contraster").',
+			description: 'Search the RGAA glossary for accessibility terms and definitions. Each term includes linkedCriteria: the list of criteria and tests that reference it. Supports French variants (accent-insensitive, inflections).',
 			inputSchema: {
 				type: 'object',
 				properties: {

@@ -55,6 +55,12 @@ function extractCriteria(htmlFile, version) {
 			const critTitleHtml = critTitleMatch[2];
 			const critTitle = critTitleHtml.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
+			// Extract glossary references from criterion title
+			const glossaryLinkRe = /<a\s+href="[^"]*glossaire[^"]*#(glossaire-\d+)"[^>]*>/g;
+			const critGlossaryRefs = [...new Set(
+				[...critTitleHtml.matchAll(glossaryLinkRe)].map(m => m[1])
+			)];
+
 			// Extract criterion number
 			const numMatch = critId.match(/crit-(\d+)-(\d+)/);
 			const criterionNumber = numMatch ? `${numMatch[1]}.${numMatch[2]}` : critId;
@@ -74,18 +80,31 @@ function extractCriteria(htmlFile, version) {
 				const start = testPositions[t].start;
 				// Get text until the next test or end
 				const end = t + 1 < testPositions.length ? testPositions[t + 1].start - 50 : critContent.length;
+				const fullRawHtml = critContent.substring(start, end);
 				const rawText = critContent.substring(start, Math.min(start + 600, end));
 				const testText = rawText.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
 				const testNumMatch = testId.match(/test-([\d-]+)/);
 				const testNumber = testNumMatch ? testNumMatch[1].replace(/-/g, '.') : testId;
 
+				// Extract glossary references from test HTML (use full HTML, not truncated)
+				const testGlossaryRefs = [...new Set(
+					[...fullRawHtml.matchAll(glossaryLinkRe)].map(m => m[1])
+				)];
+
 				tests.push({
 					id: testId,
 					number: testNumber,
 					description: testText.substring(0, 500),
+					glossaryRefs: testGlossaryRefs,
 				});
 			}
+
+			// Merge criterion-level and all test-level glossary refs
+			const allGlossaryRefs = [...new Set([
+				...critGlossaryRefs,
+				...tests.flatMap(t => t.glossaryRefs),
+			])];
 
 			criteria.push({
 				id: critId,
@@ -95,6 +114,7 @@ function extractCriteria(htmlFile, version) {
 				theme: themeTitle,
 				themeId: themeId,
 				tests: tests,
+				glossaryRefs: allGlossaryRefs,
 			});
 		}
 	}
@@ -238,6 +258,46 @@ if (fs.existsSync(methodologyFile) && allData.versions['rgaa41']) {
 	// Re-save the enriched rgaa41 data
 	const versionFile = path.join(DATA_DIR, 'rgaa41.json');
 	fs.writeFileSync(versionFile, JSON.stringify(allData.versions['rgaa41'], null, 2));
+}
+
+// Build reverse references: glossary term -> linked criteria and tests
+for (const [versionId, versionData] of Object.entries(allData.versions)) {
+	const glossaryMap = {};
+	for (const term of versionData.glossary) {
+		glossaryMap[term.id] = term;
+		term.linkedCriteria = [];
+	}
+
+	for (const criterion of versionData.criteria) {
+		// Add criterion-level back-references
+		for (const refId of (criterion.glossaryRefs || [])) {
+			const term = glossaryMap[refId];
+			if (term) {
+				// Collect tests that reference this glossary term
+				const linkedTests = criterion.tests
+					.filter(t => (t.glossaryRefs || []).includes(refId))
+					.map(t => t.number);
+
+				// Avoid duplicate criteria entries
+				const existing = term.linkedCriteria.find(lc => lc.number === criterion.number);
+				if (!existing) {
+					term.linkedCriteria.push({
+						number: criterion.number,
+						title: criterion.title,
+						level: criterion.level,
+						tests: linkedTests,
+					});
+				}
+			}
+		}
+	}
+
+	const linkedCount = versionData.glossary.filter(t => t.linkedCriteria.length > 0).length;
+	console.log(`\n${versionData.label}: ${linkedCount}/${versionData.glossary.length} glossary terms linked to criteria`);
+
+	// Re-save per-version file with back-references
+	const versionFile = path.join(DATA_DIR, `${versionId}.json`);
+	fs.writeFileSync(versionFile, JSON.stringify(versionData, null, 2));
 }
 
 // Write combined file
