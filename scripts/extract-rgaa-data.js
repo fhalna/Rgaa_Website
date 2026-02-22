@@ -216,6 +216,30 @@ for (const version of versions) {
 	console.log(`  -> Saved to data/${version.id}.json`);
 }
 
+// Enrich RGAA 4.1 data with methodologies if available
+const methodologyFile = path.join(DATA_DIR, 'methodologies.json');
+if (fs.existsSync(methodologyFile) && allData.versions['rgaa41']) {
+	const methodologies = JSON.parse(fs.readFileSync(methodologyFile, 'utf-8'));
+	let enriched = 0;
+	for (const criterion of allData.versions['rgaa41'].criteria) {
+		const critMethodologies = methodologies[criterion.number];
+		if (critMethodologies) {
+			for (const test of criterion.tests) {
+				const methodology = critMethodologies.find(m => m.testId === test.id);
+				if (methodology) {
+					test.methodology = methodology.markdown;
+					enriched++;
+				}
+			}
+		}
+	}
+	console.log(`\nEnriched ${enriched} RGAA 4.1 tests with methodologies`);
+
+	// Re-save the enriched rgaa41 data
+	const versionFile = path.join(DATA_DIR, 'rgaa41.json');
+	fs.writeFileSync(versionFile, JSON.stringify(allData.versions['rgaa41'], null, 2));
+}
+
 // Write combined file
 const combinedFile = path.join(DATA_DIR, 'rgaa-all.json');
 fs.writeFileSync(combinedFile, JSON.stringify(allData, null, 2));

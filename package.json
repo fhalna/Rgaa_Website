@@ -13,7 +13,8 @@
     "test:html": "node tests/validate-html.js",
     "test:links": "node tests/check-links.js",
     "translate": "node scripts/translate.js",
-    "extract-data": "node scripts/extract-rgaa-data.js"
+    "extract-data": "node scripts/extract-rgaa-data.js",
+    "scrape-methodologies": "node scripts/scrape-methodologies.js"
   },
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
